@@ -13,5 +13,7 @@ use yii\db\ActiveRecord;
 
 class BaseModel extends ActiveRecord
 {
+    const DELETE_NOT = 0;
+    const DELETED = 1;
 
 }

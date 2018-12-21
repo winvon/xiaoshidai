@@ -27,9 +27,6 @@ use yii\helpers\Json;
 class Admin extends \backend\models\BaseModel
 {
 
-    const DELETE_NOT = 0;
-    const DELETED = 1;
-
     const LOCK_NOT = 0;
     const LOCKED = 1;
 
@@ -205,6 +202,7 @@ class Admin extends \backend\models\BaseModel
     {
         return $query = self::find()
             ->where(['is_delete' => self::DELETE_NOT])
+            ->andWhere(['is_super_admin' => self::SUPER_ADMIN_NO])
             ->andFilterWhere(['accounts' => $params['accounts']])
             ->andFilterWhere(['like', 'username', $params['username']])
             ->andFilterWhere(['like', 'email', $params['email']])
@@ -228,23 +226,24 @@ class Admin extends \backend\models\BaseModel
 
     public function getList($params)
     {
-        $page_size=Param::getHeaders('page-size');
-        $page=Param::getHeaders('page');
+        $page_size = Param::getHeaders('page-size');
+        $page = Param::getHeaders('page');
         $query = self::getQuery($params);
         $models = $query->limit($page_size)
             ->offset(($page - 1) * $page_size)
+            ->orderBy('created_at DESC')
             ->all();
         $array = [];
         foreach ($models as $model) {
             $array[] = $model->getView();
         }
         $count = $query->count();
-        $total_page = ceil($count/$page_size) ;
+        $total_page = ceil($count / $page_size);
         $headers = Yii::$app->request->headers;
         // 增加一个 Pragma 头，已存在的Pragma 头不会被覆盖。
         header('total-count:' . $count);
         header('current-count:' . count($models));
-        header('total-page:'. $total_page);
+        header('total-page:' . $total_page);
         return $array;
     }
 

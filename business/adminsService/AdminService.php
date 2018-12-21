@@ -45,14 +45,12 @@ class AdminService implements IAdminService
         return true;
     }
 
-
     public function checkIdentity()
     {
         try {
             if ($this->model->is_super_admin !== Admin::SUPER_ADMIN_YES) {
                 return WeHelper::comReturn(null, BackendErrorCode::ERR_IDENTITY);
             }
-
         } catch (\Exception $e) {
             return WeHelper::comReturn(null, ErrorCode::ERR_DB);
         }
@@ -72,7 +70,6 @@ class AdminService implements IAdminService
             $res = $this->model->getList($get);
             return WeHelper::comReturn($res, ErrorCode::ERR_SUCCESS);
         } catch (\Exception $e) {
-            return $e->getMessage();
             return WeHelper::comReturn(null, ErrorCode::ERR_DB);
         }
         return $res;
@@ -183,6 +180,24 @@ class AdminService implements IAdminService
      */
     public function view()
     {
+        $get = Yii::$app->request->get();
+        try {
+
+            $res = $this->model->findOneById($get['id']);
+            if (!$res) {
+                return WeHelper::comReturn($res, BackendErrorCode::ERR_OBJECT_NON);
+            }
+
+            $this->model = $res;
+
+            $res = $this->model->getView();
+
+            return WeHelper::comReturn($res, BackendErrorCode::ERR_SUCCESS);
+
+        } catch (\Exception $e) {
+            return WeHelper::comReturn(null, ErrorCode::ERR_DB);
+        }
+        return true;
     }
 
     /**

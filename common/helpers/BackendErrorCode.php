@@ -22,6 +22,8 @@ class BackendErrorCode extends ErrorCode
     const ERR_OBJECT_NON = 1007;
     /** 身份错误 */
     const ERR_IDENTITY = 1008;
+    /** 身份错误 */
+    const ERR_DELETE = 1009;
 
     public static function errorInfo($errorCode)
     {

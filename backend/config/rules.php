@@ -11,4 +11,18 @@ return [
             'PUT,PATCH un-lock/<id>' => 'un-lock',
         ],
     ],
+    [
+        'class' => 'yii\rest\UrlRule',
+        'controller' => 'admin/banner',
+        'pluralize' => false,
+        'extraPatterns' => [
+        ],
+    ],
+    [
+        'class' => 'yii\rest\UrlRule',
+        'controller' => 'admin/banner/item',
+        'pluralize' => false,
+        'extraPatterns' => [
+        ],
+    ],
 ];

@@ -8,6 +8,7 @@
  */
 
 namespace business\interfaceService\admin;
-interface  IAdminService extends BaseService
+interface  IBannerItemService extends BaseService
 {
+
 }
