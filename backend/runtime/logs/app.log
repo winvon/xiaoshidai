@@ -1,0 +1,2340 @@
+2018-12-21 09:57:10 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The "modelClass" property must be set. in E:\xiaoshidai_service\vendor\yiisoft\yii2\rest\ActiveController.php:65
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\rest\ActiveController->init()
+#1 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(86): yii\base\BaseObject->__construct(Array)
+#2 [internal function]: yii\base\Controller->__construct('admin', Object(backend\modules\admin\Module), Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('backend\\modules...', Array, Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\BaseYii.php(345): yii\di\Container->get('backend\\modules...', Array)
+#6 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(642): yii\BaseYii::createObject('backend\\modules...', Array)
+#7 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('admin')
+#8 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(588): yii\base\Module->createController('login')
+#9 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('admin/login')
+#10 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/log...', Array)
+#11 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#13 {main}
+2018-12-21 09:57:10 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = [
+    'username' => '123456'
+    'password' => '12345'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '521120053a3e4ef43fc3d09db67f3e6c948bcd6031325f9081abe9012b40fc5ea:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"lPRu4ZILLxmGEKFrkgc9Btc2eS_r_rDb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '30'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=521120053a3e4ef43fc3d09db67f3e6c948bcd6031325f9081abe9012b40fc5ea%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22lPRu4ZILLxmGEKFrkgc9Btc2eS_r_rDb%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => 'e7b5e3bf-68f0-4c93-9b36-dcfb00e812f3'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => ''
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '60770'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin/login'
+    'REQUEST_URI' => '/admin/admin/login'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '30'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin/login'
+    'PATH_INFO' => '/admin/admin/login'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin/login'
+    'REQUEST_TIME_FLOAT' => 1545357430.564
+    'REQUEST_TIME' => 1545357430
+]
+2018-12-21 10:17:00 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Request.php:284
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(82): yii\web\Request->resolve()
+#1 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#3 {main}
+2018-12-21 10:17:00 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '521120053a3e4ef43fc3d09db67f3e6c948bcd6031325f9081abe9012b40fc5ea:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"lPRu4ZILLxmGEKFrkgc9Btc2eS_r_rDb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '30'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=521120053a3e4ef43fc3d09db67f3e6c948bcd6031325f9081abe9012b40fc5ea%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22lPRu4ZILLxmGEKFrkgc9Btc2eS_r_rDb%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '478942bc-aaac-4715-b6c1-ef30a78cc248'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => ''
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '61192'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin/login'
+    'REQUEST_URI' => '/admin/admin/login'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '30'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin/login'
+    'PATH_INFO' => '/admin/admin/login'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin/login'
+    'REQUEST_TIME_FLOAT' => 1545358620.3252
+    'REQUEST_TIME' => 1545358620
+]
+2018-12-21 10:24:39 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][yii\base\ErrorException:2] yii\base\ErrorException: header() expects parameter 3 to be integer, string given in E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php:22
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'header() expect...', 'E:\\xiaoshidai_s...', 22, Array)
+#1 E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php(22): header('token', 'asdfasdf', '')
+#2 [internal function]: backend\modules\admin\controllers\AdminController->actionLogin()
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#6 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/log...', Array)
+#7 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#9 {main}
+2018-12-21 10:24:39 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = [
+    'username' => '123456'
+    'password' => '12345'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '30'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '7957136b-341c-43d5-99b7-9a875cb71d32'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => ''
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '61455'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin/login'
+    'REQUEST_URI' => '/admin/admin/login'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '30'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin/login'
+    'PATH_INFO' => '/admin/admin/login'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin/login'
+    'REQUEST_TIME_FLOAT' => 1545359079.8176
+    'REQUEST_TIME' => 1545359079
+]
+2018-12-21 10:54:46 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Call to undefined method business\adminsService\AdminService::checkToken() in E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php:27
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(155): backend\modules\admin\controllers\AdminController->beforeAction(Object(yii\rest\CreateAction))
+#1 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/cre...', Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#5 {main}
+2018-12-21 10:54:46 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = [
+    'password' => '123456'
+    'accounts' => '10000'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '30'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '3a7158a3-22db-4a3a-87a0-c1096005432e'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => ''
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62073'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '30'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545360886.1382
+    'REQUEST_TIME' => 1545360886
+]
+2018-12-21 10:56:50 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][ParseError] ParseError: syntax error, unexpected 'try' (T_TRY) in E:\xiaoshidai_service\business\adminsService\AdminService.php:31
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('business\\admins...')
+#1 [internal function]: spl_autoload_call('business\\admins...')
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\di\Container.php(428): ReflectionClass->__construct('business\\admins...')
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\di\Container.php(364): yii\di\Container->getDependencies('business\\admins...')
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('business\\admins...', Array, Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\di\Container.php(174): yii\di\Container->get('business\\admins...', Array, Array)
+#6 E:\xiaoshidai_service\common\helpers\WeHelper.php(19): yii\di\Container->get('Admins.AdminSer...')
+#7 E:\xiaoshidai_service\common\base\RController.php(24): common\helpers\WeHelper::getService('Admins.Admin')
+#8 E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php(26): common\base\RController->getService('Admins.Admin')
+#9 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(155): backend\modules\admin\controllers\AdminController->beforeAction(Object(yii\rest\CreateAction))
+#10 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/cre...', Array)
+#12 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#14 {main}
+2018-12-21 10:56:50 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = [
+    'password' => '123456'
+    'accounts' => '10000'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '30'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => 'f253c8be-aa2c-4d4c-976b-6161259fe598'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => ''
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62113'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '30'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545361010.2612
+    'REQUEST_TIME' => 1545361010
+]
+2018-12-21 10:57:43 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Call to undefined method business\adminsService\AdminService::checkIdentity() in E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php:36
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(155): backend\modules\admin\controllers\AdminController->beforeAction(Object(yii\rest\CreateAction))
+#1 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/cre...', Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#5 {main}
+2018-12-21 10:57:43 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = [
+    'password' => '123456'
+    'accounts' => '10000'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '30'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => 'f9bf7f85-67b2-471f-b6f1-e5c9e2a9455d'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => '111'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62113'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '30'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545361063.271
+    'REQUEST_TIME' => 1545361063
+]
+2018-12-21 11:22:23 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: admin/admin/options in E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('options', Array)
+#1 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/opt...', Array)
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#2 {main}
+2018-12-21 11:22:23 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '16'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '9c569b56-f0a5-4da4-9543-a367c89c7508'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => 'bbbb'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62712'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '16'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'PUT'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545362543.1356
+    'REQUEST_TIME' => 1545362543
+]
+2018-12-21 11:23:15 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: admin/admin/options in E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('options', Array)
+#1 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/opt...', Array)
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#2 {main}
+2018-12-21 11:23:15 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '16'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => 'b6ff5751-76f8-41d8-9bc9-b0f033eaf8a9'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62712'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '16'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'PUT'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545362595.9508
+    'REQUEST_TIME' => 1545362595
+]
+2018-12-21 11:23:28 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: admin/admin/options in E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('options', Array)
+#1 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/opt...', Array)
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#2 {main}
+2018-12-21 11:23:28 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '16'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '75557997-4fe0-4c06-9bf3-d764a7649560'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62712'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '16'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'PUT'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545362608.7404
+    'REQUEST_TIME' => 1545362608
+]
+2018-12-21 11:30:20 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: admin/admin/options in E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('options', Array)
+#1 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/opt...', Array)
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#2 {main}
+2018-12-21 11:30:20 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '6ed66c75-dc98-4554-9343-657b2505c381'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62882'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'DELETE'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545363020.585
+    'REQUEST_TIME' => 1545363020
+]
+2018-12-21 11:30:33 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Call to undefined method business\adminsService\AdminService::delelte() in E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php:88
+Stack trace:
+#0 [internal function]: backend\modules\admin\controllers\AdminController->actionDelete()
+#1 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('delete', Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/del...', Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#7 {main}
+2018-12-21 11:30:33 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = [
+    'id' => '2'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '2e2c661d-561d-47dc-9650-8278d0de8dcd'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62882'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin/2'
+    'REQUEST_URI' => '/admin/admin/2'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'DELETE'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin/2'
+    'PATH_INFO' => '/admin/admin/2'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin/2'
+    'REQUEST_TIME_FLOAT' => 1545363033.0112
+    'REQUEST_TIME' => 1545363033
+]
+2018-12-21 11:32:01 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Request.php:284
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(82): yii\web\Request->resolve()
+#1 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#3 {main}
+2018-12-21 11:32:00 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => 'ad88dbc9-8be6-496e-9280-8729f8bf545d'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62882'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin/lock'
+    'REQUEST_URI' => '/admin/admin/lock'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'PATCH'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin/lock'
+    'PATH_INFO' => '/admin/admin/lock'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin/lock'
+    'REQUEST_TIME_FLOAT' => 1545363120.9438
+    'REQUEST_TIME' => 1545363120
+]
+2018-12-21 11:32:24 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Request.php:284
+Stack trace:
+#0 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(82): yii\web\Request->resolve()
+#1 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#3 {main}
+2018-12-21 11:32:24 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '26c3f105-c624-4b4f-b6f0-f798d7e33c33'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62882'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin/lock'
+    'REQUEST_URI' => '/admin/admin/lock'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'PATCH'
+    'QUERY_STRING' => ''
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin/lock'
+    'PATH_INFO' => '/admin/admin/lock'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin/lock'
+    'REQUEST_TIME_FLOAT' => 1545363144.6811
+    'REQUEST_TIME' => 1545363144
+]
+2018-12-21 13:07:35 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Class 'common\helpers\Params' not found in E:\xiaoshidai_service\business\adminsService\AdminService.php:71
+Stack trace:
+#0 E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php(55): business\adminsService\AdminService->getList()
+#1 [internal function]: backend\modules\admin\controllers\AdminController->actionIndex()
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/ind...', Array)
+#6 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#8 {main}
+2018-12-21 13:07:34 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = [
+    'page' => '1'
+    'page_size' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '0b03f839-d3b4-4547-942a-ee4d89b733fa'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ACCESS_TOKEN' => 'pppppppp'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '49454'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin?page=1&page_size=3'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'page=1&page_size=3'
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545368854.9328
+    'REQUEST_TIME' => 1545368854
+]
+2018-12-21 13:08:31 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Class 'business\adminsService\Params' not found in E:\xiaoshidai_service\business\adminsService\AdminService.php:71
+Stack trace:
+#0 E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php(55): business\adminsService\AdminService->getList()
+#1 [internal function]: backend\modules\admin\controllers\AdminController->actionIndex()
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/ind...', Array)
+#6 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#8 {main}
+2018-12-21 13:08:31 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = [
+    'page' => '1'
+    'page_size' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => 'b56c71e3-0016-40ce-b28b-cd7ce5ffe016'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ACCESS_TOKEN' => 'pppppppp'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '49454'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin?page=1&page_size=3'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'page=1&page_size=3'
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545368911.4345
+    'REQUEST_TIME' => 1545368911
+]
+2018-12-21 13:08:47 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Class 'commom\param\Param' not found in E:\xiaoshidai_service\business\adminsService\AdminService.php:71
+Stack trace:
+#0 E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php(55): business\adminsService\AdminService->getList()
+#1 [internal function]: backend\modules\admin\controllers\AdminController->actionIndex()
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/ind...', Array)
+#6 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#8 {main}
+2018-12-21 13:08:47 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = [
+    'page' => '1'
+    'page_size' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '22b957e5-0937-4648-8beb-bcf119231466'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ACCESS_TOKEN' => 'pppppppp'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '49454'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin?page=1&page_size=3'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'page=1&page_size=3'
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545368927.2072
+    'REQUEST_TIME' => 1545368927
+]
+2018-12-21 13:09:33 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Class 'commom\param\Param' not found in E:\xiaoshidai_service\business\adminsService\AdminService.php:71
+Stack trace:
+#0 E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php(55): business\adminsService\AdminService->getList()
+#1 [internal function]: backend\modules\admin\controllers\AdminController->actionIndex()
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/ind...', Array)
+#6 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#8 {main}
+2018-12-21 13:09:32 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = [
+    'page' => '1'
+    'page_size' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => 'c142ac18-2c3f-4a3f-98e1-c435451a07e1'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ACCESS_TOKEN' => 'pppppppp'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '49505'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin?page=1&page_size=3'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'page=1&page_size=3'
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545368972.9168
+    'REQUEST_TIME' => 1545368972
+]
+2018-12-21 13:10:15 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Class 'commom\param\Param' not found in E:\xiaoshidai_service\business\adminsService\AdminService.php:71
+Stack trace:
+#0 E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php(55): business\adminsService\AdminService->getList()
+#1 [internal function]: backend\modules\admin\controllers\AdminController->actionIndex()
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/ind...', Array)
+#6 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#8 {main}
+2018-12-21 13:10:15 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = [
+    'page' => '1'
+    'page_size' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => 'cc4a9e17-7282-4c87-8ba3-f90c0c299430'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ACCESS_TOKEN' => 'pppppppp'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '49526'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin?page=1&page_size=3'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'page=1&page_size=3'
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545369015.5311
+    'REQUEST_TIME' => 1545369015
+]
+2018-12-21 13:10:52 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Class 'commom\param\Param' not found in E:\xiaoshidai_service\business\adminsService\AdminService.php:71
+Stack trace:
+#0 E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php(55): business\adminsService\AdminService->getList()
+#1 [internal function]: backend\modules\admin\controllers\AdminController->actionIndex()
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/ind...', Array)
+#6 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#8 {main}
+2018-12-21 13:10:52 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = [
+    'page' => '1'
+    'page_size' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '4ec669f7-0dc9-45b3-91de-d0bc74a8e508'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ACCESS_TOKEN' => 'pppppppp'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '49526'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin?page=1&page_size=3'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'page=1&page_size=3'
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545369052.562
+    'REQUEST_TIME' => 1545369052
+]
+2018-12-21 13:11:31 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Class 'commom\param\Param' not found in E:\xiaoshidai_service\business\adminsService\AdminService.php:71
+Stack trace:
+#0 E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php(55): business\adminsService\AdminService->getList()
+#1 [internal function]: backend\modules\admin\controllers\AdminController->actionIndex()
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/ind...', Array)
+#6 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#8 {main}
+2018-12-21 13:11:31 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = [
+    'page' => '1'
+    'page_size' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '3d001720-1d40-4ccf-ba1c-59c6594a1689'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ACCESS_TOKEN' => 'pppppppp'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '49526'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin?page=1&page_size=3'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'page=1&page_size=3'
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545369091.2989
+    'REQUEST_TIME' => 1545369091
+]
+2018-12-21 13:12:34 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Class 'commom\helpers\Param' not found in E:\xiaoshidai_service\business\adminsService\AdminService.php:71
+Stack trace:
+#0 E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php(55): business\adminsService\AdminService->getList()
+#1 [internal function]: backend\modules\admin\controllers\AdminController->actionIndex()
+#2 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/ind...', Array)
+#6 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#8 {main}
+2018-12-21 13:12:34 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = [
+    'page' => '1'
+    'page_size' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => 'e391fb56-d505-4409-9575-9292066e03c6'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ACCESS_TOKEN' => 'pppppppp'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '49526'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin?page=1&page_size=3'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'page=1&page_size=3'
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545369154.6397
+    'REQUEST_TIME' => 1545369154
+]
+2018-12-21 13:12:55 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][error][Error] Error: Class 'commom\param\Param' not found in E:\xiaoshidai_service\backend\models\Admin.php:232
+Stack trace:
+#0 E:\xiaoshidai_service\business\adminsService\AdminService.php(72): backend\models\Admin->getList(Array)
+#1 E:\xiaoshidai_service\backend\modules\admin\controllers\AdminController.php(55): business\adminsService\AdminService->getList()
+#2 [internal function]: backend\modules\admin\controllers\AdminController->actionIndex()
+#3 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#5 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#6 E:\xiaoshidai_service\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('admin/admin/ind...', Array)
+#7 E:\xiaoshidai_service\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 E:\xiaoshidai_service\backend\web\index.php(20): yii\base\Application->run()
+#9 {main}
+2018-12-21 13:12:55 [127.0.0.1][-][l75eqk88amdimf06odoltbiul4][info][application] $_GET = [
+    'page' => '1'
+    'page_size' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vhdfssmpdifjgn44dkeins2513'
+    '_csrf_backend' => '1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a:2:{i:0;s:13:\"_csrf_backend\";i:1;s:32:\"MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8\";}'
+    'advanced-backend' => 'l75eqk88amdimf06odoltbiul4'
+    '_csrf-backend' => '36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\FOCUS\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-JJ1DDK5'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\FOCUS'
+    'LOCALAPPDATA' => 'C:\\Users\\FOCUS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-JJ1DDK5'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\FOCUS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\phpStudy\\php\\php-7.0.12-nts;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\FOCUS\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\FOCUS\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FOCUS\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-JJ1DDK5'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-JJ1DDK5'
+    'USERNAME' => 'FOCUS'
+    'USERPROFILE' => 'C:\\Users\\FOCUS'
+    'windir' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=vhdfssmpdifjgn44dkeins2513; _csrf_backend=1c2d2b79e829152e315fa8fe9ce66aefc436cda071a7f789bb02f973caa00966a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf_backend%22%3Bi%3A1%3Bs%3A32%3A%22MiZmrUC3gAK3s_NPtqtqDA5h8AZuwmc8%22%3B%7D; advanced-backend=l75eqk88amdimf06odoltbiul4; _csrf-backend=36fbdc06a485c2e705266cae5321581dafc76ed0826d300769493b387ded38f2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TurBGCuJa9n7HvcIQXwj0MZFx4TRzsj6%22%3B%7D'
+    'HTTP_HOST' => 'xiaoshidai.backend.com'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.4.0'
+    'HTTP_POSTMAN_TOKEN' => '54dc6f75-c943-4581-84c3-ef63acf40d23'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ACCESS_TOKEN' => 'pppppppp'
+    'HTTP_TOKEN' => 'uuuuu'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'xiaoshidai.backend.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '49526'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'E:\\xiaoshidai_service\\backend\\web'
+    'DOCUMENT_URI' => '/index.php/admin/admin'
+    'REQUEST_URI' => '/admin/admin?page=1&page_size=3'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '32'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'page=1&page_size=3'
+    'PATH_TRANSLATED' => 'E:\\xiaoshidai_service\\backend\\web/admin/admin'
+    'PATH_INFO' => '/admin/admin'
+    'SCRIPT_FILENAME' => 'E:\\xiaoshidai_service\\backend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php/admin/admin'
+    'REQUEST_TIME_FLOAT' => 1545369175.6752
+    'REQUEST_TIME' => 1545369175
+]
