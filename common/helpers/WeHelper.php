@@ -34,6 +34,17 @@ class WeHelper{
         return $data;
     }
 
+    public static function jsonReturn($data=null,$status=0,$message=null){
+        $data=[
+            'code' => $status,
+            'data' => $data,
+        ];
+        if($status != '0'){
+            $data['msg'] = CodeHelper::get_Array_Key_Exists($status) == true ? self::getCodeStatus($status) : $message;
+        }
+        return $data;
+    }
+
     /**
      * 获取全局状态信息
      * @param int $status
@@ -45,5 +56,13 @@ class WeHelper{
             return 'OK!';
         }
         return '失败，错误号：'.$status.' '.ErrorCode::errorInfo($status);
+    }
+
+    public static function getCodeStatus($status = 0){
+        if($status == 0)
+        {
+            return 'OK!';
+        }
+        return $status.' '.CodeHelper::getCodeText($status);
     }
 }

@@ -11,6 +11,9 @@ namespace business\interfaceService\admin;
 
 interface  BaseService
 {
+
+
+
     /**
      * 获取列表
      * @param $params

@@ -1,0 +1,57 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: FOCUS
+ * Date: 2018/12/24
+ * Time: 15:32
+ */
+
+namespace common\helpers;
+
+class Upload
+{
+    public static function base64_image_content($base64_image_content, $file_name)
+    {
+        //匹配出图片的格式
+        if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_image_content, $result)) {
+            $type = $result[2];
+            $new_file = "upload/" . $file_name . "/" . date('Ymd', time()) . "1/";
+            if (!file_exists($new_file)) {
+                //检查是否有该文件夹，如果没有就创建，并给予最高权限
+                mkdir($new_file, 0777, true);
+            }
+            $new_file = $new_file . rand(1000, 9999) . time() . ".{$type}";
+            if (file_put_contents($new_file, base64_decode(str_replace($result[1], '', $base64_image_content)))) {
+                return '/' . $new_file;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public static function uploadByFile($file, $file_name)
+    {
+        $name = $file['name'];
+        $type = strtolower(substr($name, strrpos($name, '.') + 1)); //得到文件类型，并且都转化成小写
+        $allow_type = array('jpg', 'jpeg', 'gif', 'png');
+        if (!in_array($type, $allow_type)) {
+            //如果不被允许，则直接停止程序运行
+            return false;
+        }
+        if (!is_uploaded_file($file['tmp_name'])) {
+            return false;
+        }
+        $new_file = "upload/img/" . $file_name . "/" . date('Ymd', time()) . "/";
+        if (!file_exists($new_file)) {
+            //检查是否有该文件夹,如果没有就创建，并给予最高权限
+            mkdir($new_file, 0777, true);
+        }
+        $file_path=$new_file . rand(1000, 9999) . time() . ".{$type}";
+        if (move_uploaded_file($file['tmp_name'],$file_path)) {
+            return '/' . $file_path;
+        }
+        return false;
+    }
+}
