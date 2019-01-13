@@ -35,7 +35,7 @@ class UsersController extends RController
     {
         $request = Yii::$app->request;
         $page_size = $request->get('page_size',20);//分页数[默认20条]
-        $order = $request->get('order','reg_time DESC');//排序方式[默认注册时间倒序]
+        $order = $request->get('order','created_at DESC');//排序方式[默认注册时间倒序]
         $where = [];
         $where['sex'] = $request->get('sex','');//性别
         $where['mobile'] = $request->get('mobile','');//手机号码
@@ -86,6 +86,8 @@ class UsersController extends RController
      */
     public function actionUpdate()
     {
+//        var_dump('122');
+//        die();
         $request = Yii::$app->request;
         $user_id = $request->get('id');
         $data = $request->post();

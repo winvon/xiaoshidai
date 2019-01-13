@@ -48,13 +48,21 @@ class ConstantHelper
     CONST SOURCE_PC = 4;
 
     /* Banner属性（1-绑定商品；2-绑定网址） */
-    CONST BANNER_ITEM_TYPE_BY_GOODS = 1;
-    CONST BANNER_ITEM_TYPE_BY_URL = 2;
+    CONST BANNER_ITEM_TYPE_BY_GOODS = 2;
+    CONST BANNER_ITEM_TYPE_BY_URL = 1;
 
     /* 优惠券类型（1-无门槛；2-满减；3-折扣） */
     CONST COUPON_TYPE_OPEN = 1;
     CONST COUPON_TYPE_REDUCE = 2;
     CONST COUPON_TYPE_DISCOUNT = 3;
+
+    /**web左侧菜单显示(是否显示.0否,1是)**/
+    CONST MENU_IS_DISPLAY_FALSE=0;
+    CONST MENU_IS_DISPLAY_TRUE=1;
+
+    /**广告位显示(是否显示.0否,1是)**/
+    CONST AD_IS_SHOW_FALSE=1;
+    CONST AD_IS_SHOW_TRUE=0;
 
 
     /**

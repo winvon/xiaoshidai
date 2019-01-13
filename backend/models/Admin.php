@@ -64,7 +64,6 @@ class Admin extends \backend\models\BaseModel
             [['email'], 'string', 'max' => 50],
             ['email', 'email', 'message' => '邮箱格式错误'],
             [['token'], 'string', 'max' => 200],
-            [['oldpassword'], 'required', 'on' => 'change-password'],
             ['oldpassword', 'checkPassword', 'on' => 'change-password'],
         ];
     }
@@ -385,17 +384,14 @@ class Admin extends \backend\models\BaseModel
         if (empty($param['password'])) {
             $this->addError('password', '新密码必填');
         }
-
         if (empty($param['oldpassword'])) {
             $this->addError('oldpassword', '旧密码必填');
         }
-
         if (!empty($param['oldpassword']) && $this->password != $this->setPassword($param['oldpassword'])) {
             $this->addError('oldpassword', '旧密码错误');
         }
-
         $this->password = $this->setPassword($param['password']);
-
+        $this->scenario='change-password';
         if (empty($this->getErrors()) && $this->save()) {
             return true;
         }

@@ -8,7 +8,7 @@
 
 namespace business\couponService;
 
-use backend\models\Banner;
+use backend\models\Ad;
 use backend\models\Coupon;
 use backend\models\UserCoupon;
 use business\interfaceService\admin\IBannerService;
@@ -36,7 +36,7 @@ class UserCouponService implements IBannerService
     {
         $get = Yii::$app->request->get();
         try {
-            $get = Param::setNull(['user_id', 'coupon_id'], $get);
+            $get = Param::setNull(['username', 'coupon_name','is_lock','is_consume'], $get);
             $res = $this->model->getList($get);
             return WeHelper::jsonReturn($res, BackendErrorCode::ERR_SUCCESS);
         } catch (\Exception $e) {
@@ -153,10 +153,8 @@ class UserCouponService implements IBannerService
         return true;
     }
 
-
-
     /**
-     * 冻结
+     * 冻结|解冻
      * @return array|bool|string
      */
     public function lock()
@@ -170,32 +168,6 @@ class UserCouponService implements IBannerService
             $this->model = $res;
 
             if ($this->model->lock() !== true) {
-                return WeHelper::jsonReturn(null, BackendErrorCode::ERR_MODEL_VALIDATE);
-            }
-            return WeHelper::jsonReturn(null, BackendErrorCode::ERR_SUCCESS);
-
-        } catch (\Exception $e) {
-            return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
-        }
-        return true;
-    }
-
-
-    /**
-     * 解冻冻结
-     * @return array|bool|string
-     */
-    public function unlock()
-    {
-        $get = Yii::$app->request->get();
-        try {
-            $res = $this->model->findOneById($get['id']);
-            if (!$res) {
-                return WeHelper::jsonReturn($res, BackendErrorCode::ERR_OBJECT_NON);
-            }
-            $this->model = $res;
-
-            if ($this->model->unlock() !== true) {
                 return WeHelper::jsonReturn(null, BackendErrorCode::ERR_MODEL_VALIDATE);
             }
             return WeHelper::jsonReturn(null, BackendErrorCode::ERR_SUCCESS);

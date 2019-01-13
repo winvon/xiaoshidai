@@ -80,23 +80,13 @@ class UserCouponController  extends RController
     }
 
     /**
-     * 冻结用户优惠券
+     * 冻结|解冻用户优惠券
      * @return mixed
      */
     public function actionLock()
     {
         $service = $this->getService('Coupon.UserCoupon');
         return $service->lock();
-    }
-
-    /**
-     * 解冻用户优惠券
-     * @return mixed
-     */
-    public function actionUnLock()
-    {
-        $service = $this->getService('Coupon.UserCoupon');
-        return $service->unlock();
     }
 
 }

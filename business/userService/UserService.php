@@ -133,7 +133,7 @@ class UserService implements IUserService
      * @author：yichaobao [yichaobao@163.com]
      * @version : V1.0.0
      */
-    public function getUserLists($where = [],$order = 'reg_time desc',$pageSize = 20)
+    public function getUserLists($where = [],$order = 'created_at desc',$pageSize = 20)
     {
         try {
             $res = $this->model->lists_data($where,$order,$pageSize);

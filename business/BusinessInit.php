@@ -10,8 +10,8 @@ class BusinessInit implements IBusinessInit
     public function init()
     {
         $this->BasicDataService();
-        $this->AdminService();
-        $this->GoodsService();
+        $this->EmpService();
+        $this->ProductService();
         $this->UserService();
         $this->CouponService();
         $this->AdService();
@@ -23,17 +23,17 @@ class BusinessInit implements IBusinessInit
         Yii::$container->setSingleton('Basic.AreaService', 'business\basicDataService\AreaService');
     }
 
-    private function AdminService()
+    private function EmpService()
     {
-        Yii::$container->setSingleton('Admin.DemoService', 'business\adminService\DemoService');
-        Yii::$container->setSingleton('Admin.AdminService', 'business\adminService\AdminService');
+        Yii::$container->setSingleton('Emp.EmpService', 'business\empService\EmpService');
+        Yii::$container->setSingleton('Emp.EmpService', 'business\empService\EmpService');
     }
 
-    private function GoodsService()
+    private function ProductService()
     {
-        Yii::$container->setSingleton('Goods.CategoryService', 'business\goodsService\CategoryService');
-        Yii::$container->setSingleton('Goods.GoodsService', 'business\goodsService\GoodsService');
-        Yii::$container->setSingleton('Goods.ItemService', 'business\goodsService\ItemService');
+        Yii::$container->setSingleton('Product.CategoryService', 'business\productService\CategoryService');
+        Yii::$container->setSingleton('Product.ProductService', 'business\productService\ProductService');
+        Yii::$container->setSingleton('Product.ChaptersService', 'business\productService\ChaptersService');
     }
 
     private function UserService()
@@ -49,12 +49,13 @@ class BusinessInit implements IBusinessInit
 
     private function AdService()
     {
+        Yii::$container->setSingleton('Ad.AdService', 'business\adService\AdService');
         Yii::$container->setSingleton('Ad.BannerService', 'business\adService\BannerService');
-        Yii::$container->setSingleton('Ad.BannerItemService', 'business\adService\BannerItemService');
     }
 
     private function RbacService()
     {
         Yii::$container->setSingleton('Rbac.RbacService', 'business\rbacService\RbacService');
+        Yii::$container->setSingleton('Rbac.MenuService', 'business\rbacService\MenuService');
     }
 }

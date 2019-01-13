@@ -4,14 +4,14 @@ return [
     'test' => [
         'class' => 'app\modules\test\Module',
     ],
-    'admin' => [
-        'class' => 'backend\modules\admin\Module',
+    'emp' => [
+        'class' => 'backend\modules\emp\Module',
     ],
     'users' => [
         'class' => 'backend\modules\users\Module',
     ],
-    'goods' => [
-        'class' => 'backend\modules\goods\Module',
+    'product' => [
+        'class' => 'backend\modules\product\Module',
     ],
     'area' => [
         'class' => 'backend\modules\area\Module',

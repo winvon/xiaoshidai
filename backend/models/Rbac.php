@@ -11,6 +11,7 @@ namespace backend\models;
 use yii\base\Model;
 use Yii;
 use yii\helpers\ArrayHelper;
+use yii\web\NotFoundHttpException;
 
 class Rbac extends Model
 {
@@ -302,7 +303,7 @@ class Rbac extends Model
         $authManager = yii::$app->getAuthManager();
         if( $this->getScenario() == 'permission' ){
             $permission = $authManager->getPermission($name);
-            if( $permission === null ) throw new NotFoundHttpException("Cannot find permission $name");
+            if( $permission === null ) throw new  \Exception("Cannot find permission $name");
             $data = json_decode($permission->data, true);
             $temp = explode(":", $permission->name);
             $this->name = $permission->name;

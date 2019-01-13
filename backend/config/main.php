@@ -25,7 +25,7 @@ return [
 //            'format' => 'json',
             'on beforeSend' => function ($event) {
                 $response = $event->sender;
-                if ($response->statusCode==400) {
+                if ( in_array($response->statusCode,[400])) {
                     $response->data = \common\helpers\WeHelper::jsonReturn(null,$response->statusCode);
                     $response->statusCode = 200;
                 }
@@ -52,7 +52,7 @@ return [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                    'levels' => ['error','warning'],
                 ],
             ],
         ],

@@ -12,6 +12,14 @@ use Yii;
 
 class Param
 {
+
+    /**
+     * 检查哪些参数不存在
+     * @param array $standard
+     * @param array $request
+     * @return array|bool
+     * @author von
+     */
     public static function checkParams(array $standard, array $request)
     {
         $array = [];
@@ -26,16 +34,31 @@ class Param
         return true;
     }
 
+    /**
+     * 设置不存在参数为null或者过滤空格
+     * @param array $array
+     * @param array $data
+     * @return array
+     * @author von
+     */
     public static function setNull(array $array, array $data)
     {
         foreach ($array as $row) {
             if (!isset($data[$row])) {
                 $data[$row] = null;
+            }else{
+                $data[$row]=trim($data[$row]," ");
             }
         }
         return $data;
     }
 
+    /**
+     * 从get或者param配置获取参数，分页参数使用
+     * @param $key
+     * @return array|bool|mixed
+     * @author von
+     */
     public static function getParamFromGet($key)
     {
         $page = Yii::$app->request->get($key);
@@ -48,7 +71,11 @@ class Param
         return false;
     }
 
-
+    /**
+     * 获取page_size配置参数
+     * @return array|bool|mixed
+     * @author von
+     */
     public static function getPageSize()
     {
         $page = Yii::$app->request->get('page_size');
@@ -61,7 +88,12 @@ class Param
         return false;
     }
 
-
+    /**
+     * 从header或者param配置获取参数
+     * @param $key
+     * @return array|bool|string
+     * @author von
+     */
     public static function getHeaders($key)
     {
         $header = Yii::$app->request->headers;
@@ -74,7 +106,11 @@ class Param
         return false;
     }
 
-
+    /**
+     * 获取请求参数，处理数据格式
+     * @return array|mixed
+     * @author von
+     */
     public static function getParam()
     {
         $headers = Yii::$app->request->headers;

@@ -8,20 +8,19 @@ use common\helpers\Param;
 
 /**
  * This is the model class for table "{{%coupon}}".
- *
  * @property int $id
  * @property int $type
  * @property string $coupon_name
- * @property double $coupon_price
- * @property double $coupon_val
+ * @property double $restriction
+ * @property double $coupon_value
  * @property int $is_lock
  * @property int $is_delete
  * @property int $number
- * @property int $max_number
+ * @property int $max_get_number
  * @property string $start_time
  * @property string $end_time
- * @property string $consume_start_time
- * @property string $consume_end_time
+ * @property string $consume_time
+ * @property string $invalid_time
  * @property int $created_at
  * @property int $updated_at
  */
@@ -46,34 +45,55 @@ class Coupon extends \backend\models\BaseModel
     public function rules()
     {
         return [
-            [['type', 'coupon_name', 'coupon_price', 'coupon_val', 'number', 'max_number', 'start_time', 'end_time', 'consume_start_time', 'consume_end_time'], 'required'],
-            [['type', 'is_lock', 'is_delete', 'number', 'max_number'], 'integer'],
-            [['coupon_price', 'coupon_val'], 'number'],
+            [['type', 'coupon_name', 'restriction', 'coupon_value', 'number', 'max_get_number', 'start_time', 'end_time', 'consume_time', 'invalid_time'], 'required'],
+            [['type', 'is_lock', 'is_delete', 'number', 'max_get_number'], 'integer'],
+            [['restriction', 'coupon_value'], 'number'],
             [['coupon_name'], 'string', 'max' => 50],
             ['is_lock', 'default', 'value' => 0],
-            [['start_time', 'end_time', 'consume_start_time', 'consume_end_time'], 'gtTimeNow'],
-            [['end_time', 'consume_end_time'], 'gtStartTime']
+            ['max_get_number', 'check_max_get_number'],
+            [['start_time', 'end_time', 'consume_time', 'invalid_time'], 'gtTimeNow'],
+            [['end_time', 'invalid_time'], 'gtStartTime'],
+            [['start_time', 'end_time', 'consume_time', 'invalid_time'], 'safe']
         ];
     }
 
+    /**
+     * @param $attribute
+     * @author von
+     */
+    public function check_max_get_number($attribute)
+    {
+        if ($this->$attribute > $this->number) {
+            $this->addError('number', '发行数量必须大于或等于' . $this->attributeLabels()[$attribute]);
+        }
+    }
+
+    /**
+     * @param $attribute
+     * @param $params
+     * @author von
+     */
     public function gtTimeNow($attribute, $params)
     {
-        if (strtotime($this->$attribute) <= time()) {
+        if ($this->$attribute <= time()) {
             $this->addError($attribute, $this->attributeLabels()[$attribute] . '必须大于当前时间');
         }
     }
 
-
+    /**
+     * @param $attribute
+     * @param $params
+     * @author von
+     */
     public function gtStartTime($attribute, $params)
     {
         if ($attribute == 'end_time') {
-            if (strtotime($this->$attribute) <= strtotime($this->start_time)) {
-                $this->addError($attribute, $this->attributeLabels()[$attribute]. '必须大于开始领取时间');
+            if ($this->$attribute <= $this->start_time) {
+                $this->addError($attribute, $this->attributeLabels()[$attribute] . '必须大于开始领取时间');
             }
         }
-
-        if ($attribute == 'consume_end_time') {
-            if (strtotime($this->$attribute) <= strtotime($this->consume_start_time)) {
+        if ($attribute == 'invalid_time') {
+            if ($this->$attribute <= $this->consume_time) {
                 $this->addError($attribute, $this->attributeLabels()[$attribute] . '必须大于开始使用时间');
             }
         }
@@ -88,16 +108,16 @@ class Coupon extends \backend\models\BaseModel
             'id' => 'ID',
             'type' => '类别',
             'coupon_name' => '名称',
-            'coupon_price' => '符合条件',
-            'coupon_val' => '优惠券值',
+            'restriction' => '约束限制',
+            'coupon_value' => '优惠券值',
             'is_lock' => '是否冻结',
             'is_delete' => 'Is Delete',
             'number' => '发行数量',
-            'max_number' => '每人限领取数量',
+            'max_get_number' => '每人限领取数量',
             'start_time' => '开始领取时间',
             'end_time' => '结束领取时间',
-            'consume_start_time' => '开始使用时间',
-            'consume_end_time' => '结束使用时间',
+            'consume_time' => '使用时间',
+            'invalid_time' => '过期时间',
             'created_at' => '创建时间',
             'updated_at' => '更新时间',
         ];
@@ -138,17 +158,18 @@ class Coupon extends \backend\models\BaseModel
             'id' => (string)$this->id,
             'type' => $this->type,
             'coupon_name' => $this->coupon_name,
-            'coupon_price' => $this->coupon_price,
-            'coupon_val' => $this->coupon_val,
+            'restriction' => $this->restriction,
+            'coupon_value' => $this->coupon_value,
             'is_lock' => $this->is_lock,
             'number' => $this->number,
-            'max_number' => $this->max_number,
-            'start_time' => date("Y-m-d H:i", $this->start_time),
-            'end_time' => date("Y-m-d H:i", $this->end_time),
-            'consume_start_time' => date("Y-m-d H:i", $this->consume_start_time),
-            'consume_end_time' => date("Y-m-d H:i", $this->consume_end_time),
-            'updated_at' => date("Y-m-d H:i", $this->updated_at),
-            'created_at' => date("Y-m-d H:i", $this->created_at),
+            'max_get_number' => $this->max_get_number,
+            'spike_rate' => round(count($this->userCoupon) / $this->number,4) ,
+            'start_time' => $this->start_time,
+            'end_time' => $this->end_time,
+            'consume_time' => $this->consume_time,
+            'invalid_time' => $this->invalid_time,
+            'updated_at' => $this->updated_at,
+            'created_at' => $this->created_at,
         ];
     }
 
@@ -161,6 +182,10 @@ class Coupon extends \backend\models\BaseModel
     {
         $model = new self();
         $model->attributes = $data;
+        $model->start_time = strtotime($model->start_time);
+        $model->end_time = strtotime($model->end_time);
+        $model->consume_time = strtotime($model->consume_time);
+        $model->invalid_time = strtotime($model->invalid_time);
         if ($model->validate() && $model->save()) {
             return true;
         }
@@ -176,15 +201,12 @@ class Coupon extends \backend\models\BaseModel
     {
         if ($this->isNewRecord) {
             $this->is_delete = self::DELETE_NOT;
-            $this->start_time = strtotime($this->start_time);
-            $this->end_time = strtotime($this->end_time);
-            $this->consume_start_time = strtotime($this->consume_start_time);
-            $this->consume_end_time = strtotime($this->consume_end_time);
             $this->created_at = time();
             $this->updated_at = time();
         } else {
             $this->updated_at = time();
         }
+
         return parent::beforeSave($insert);
     }
 
@@ -198,8 +220,8 @@ class Coupon extends \backend\models\BaseModel
         return $query = self::find()
             ->where(['is_delete' => self::DELETE_NOT])
             ->andFilterWhere(['like', 'coupon_name', $params['coupon_name']])
-            ->andFilterWhere(['like', 'coupon_price', $params['coupon_price']])
-            ->andFilterWhere(['like', 'coupon_val', $params['coupon_val']])
+            ->andFilterWhere(['like', 'restriction', $params['restriction']])
+            ->andFilterWhere(['like', 'coupon_value', $params['coupon_value']])
             ->andFilterWhere(['is_lock' => $params['is_lock']])
             ->andFilterWhere(['type' => $params['type']]);
     }
@@ -211,20 +233,36 @@ class Coupon extends \backend\models\BaseModel
      */
     public function modifyCoupon($params)
     {
+        $userCouponModel = UserCoupon::findOne(['coupon_id' => $this->id]);
+        if ($userCouponModel) {//发放的优惠券 可以修改哪些字段
+            if (!empty($params['type'])) {
+                $this->addError('type', '优惠券已发放,优惠券类别不支持修改');
+            }
+            if (!empty($params['restriction'])) {
+                $this->addError('restriction', '优惠券已发放,使用门槛不支持修改');
+            }
+            if (!empty($params['coupon_value'])) {
+                $this->addError('coupon_value', '优惠券已发放,优惠券价值不支持修改');
+            }
+        }
+        if (!empty($this->getErrors())) {
+            return $this->getErrors();
+        }
         $this->attributes = $params;
+
         if (!empty($params['start_time'])) {
-            $this->start_time = strtotime($this->start_time);
+            $this->start_time = strtotime($params['start_time']);
         }
         if (!empty($params['end_time'])) {
-            $this->end_time = strtotime($this->end_time);
+            $this->end_time = strtotime($params['end_time']);
         }
-        if (!empty($params['consume_start_time'])) {
-            $this->consume_start_time = strtotime($this->consume_start_time);
+        if (!empty($params['consume_time'])) {
+            $this->consume_time = strtotime($params['consume_time']);
         }
-        if (!empty($params['consume_end_time'])) {
-            $this->consume_end_time = strtotime($this->consume_end_time);
+        if (!empty($params['invalid_time'])) {
+            $this->invalid_time = strtotime($params['invalid_time']);
         }
-        if ($this->save()) {
+        if ($this->validate() && $this->save()) {
             return true;
         }
         return $this->getErrors();
@@ -237,7 +275,7 @@ class Coupon extends \backend\models\BaseModel
      */
     public function getList($params)
     {
-        $page_size = Param::getHeaders('page-size');
+        $page_size = Param::getHeaders('page_size');
         $page = Param::getHeaders('page');
         $query = self::getQuery($params);
         $models = $query->limit($page_size)
@@ -293,5 +331,12 @@ class Coupon extends \backend\models\BaseModel
         return $this->getErrors();
     }
 
-
+    /**
+     * @return \yii\db\ActiveQuery
+     * @author von
+     */
+    public function getUserCoupon()
+    {
+        return $this->hasMany(UserCoupon::className(),['coupon_id'=>'id']);
+    }
 }

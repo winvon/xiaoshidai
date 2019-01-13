@@ -76,23 +76,7 @@ class UserCoupon extends \backend\models\BaseModel
         return false;
     }
 
-    /**
-     * 处理返回数据格式
-     * @return array
-     */
-    public function getView()
-    {
-        return [
-            'id' => $this->id,
-            'coupon_name' => @$this->coupon->coupon_name,
-            'username' => @$this->user->username,
-            'is_lock' => $this->is_lock,
-            'is_consume' => $this->is_consume,
-            'consume_time' => $this->consume_time == 0 ? '-' : date("Y-m-d H:i", $this->consume_time),
-            'updated_at' => date("Y-m-d H:i", $this->updated_at),
-            'created_at' => date("Y-m-d H:i", $this->created_at),
-        ];
-    }
+
 
     /**
      * 新增用户优惠券
@@ -162,10 +146,33 @@ class UserCoupon extends \backend\models\BaseModel
     public function getQuery($params)
     {
         return $query = self::find()
-            ->where(['is_delete' => self::DELETE_NOT])
-            ->andFilterWhere(['user_id' => $params['user_id']])
-            ->andFilterWhere(['coupon_id' => $params['coupon_id']])
+            ->leftJoin('xsd_user','xsd_user.id=xsd_user_coupon.user_id')
+            ->leftJoin('xsd_coupon','xsd_coupon.id=xsd_user_coupon.coupon_id')
+            ->select('xsd_user_coupon.id as id,coupon_id,user_id,xsd_user_coupon.is_lock,xsd_user_coupon.is_lock,is_consume,xsd_user_coupon.consume_time,xsd_user_coupon.updated_at,xsd_user_coupon.created_at')
+            ->where(['xsd_user_coupon.is_delete' => self::DELETE_NOT])
+            ->andFilterWhere(['like','xsd_user.username', $params['username']])
+            ->andFilterWhere(['like','xsd_coupon.coupon_name' , $params['coupon_name']])
+            ->andFilterWhere(['xsd_user_coupon.is_lock' => $params['is_lock']])
+            ->andFilterWhere(['xsd_user_coupon.is_consume' => $params['is_consume']])
             ;
+    }
+
+    /**
+     * 处理返回数据格式
+     * @return array
+     */
+    public function getView()
+    {
+        return [
+            'id' => $this->id,
+            'coupon_name' => @$this->coupon->coupon_name,
+            'username' => @$this->user->username,
+            'is_lock' => $this->is_lock,
+            'is_consume' => $this->is_consume,
+            'consume_time' => $this->consume_time == 0 ? '' : $this->consume_time,
+            'updated_at' => $this->updated_at,
+            'created_at' => $this->created_at,
+        ];
     }
 
     /**
@@ -190,7 +197,7 @@ class UserCoupon extends \backend\models\BaseModel
      */
     public function getList($params)
     {
-        $page_size = Param::getHeaders('page-size');
+        $page_size = Param::getHeaders('page_size');
         $page = Param::getHeaders('page');
         $query = self::getQuery($params);
         $models = $query->limit($page_size)
@@ -229,20 +236,11 @@ class UserCoupon extends \backend\models\BaseModel
      */
     public function lock()
     {
-        $this->is_lock = self::LOCKED;
-        if ($this->save()) {
-            return true;
+        if ($this->is_lock == self::LOCK_NOT){
+            $this->is_lock = self::LOCKED;
+        }else{
+            $this->is_lock = self::LOCK_NOT;
         }
-        return $this->getErrors();
-    }
-
-    /**
-     * 解冻用户优惠券
-     * @return array|bool
-     */
-    public function unlock()
-    {
-        $this->is_lock = self::LOCK_NOT;
         if ($this->save()) {
             return true;
         }

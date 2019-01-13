@@ -9,17 +9,14 @@
 namespace backend\modules\ad\controllers;
 
 use common\base\RController;
-use common\helpers\Upload;
-use yii\helpers\Json;
-use Yii;
 
 class BannerController extends RController
 {
-    public $modelClass = 'backend\models\Banner';
+    public $modelClass= 'backend\models\Banner0';
 
     public function actions()
     {
-        $action = parent::actions();
+        $action=parent::actions();
         unset($action['index']);
         unset($action['update']);
         unset($action['create']);
@@ -30,17 +27,18 @@ class BannerController extends RController
 
 
     /**
-     * 广告渠道列表
+     * 广告列表
      * @return mixed
      */
     public function actionIndex()
     {
+
         $service = $this->getService('Ad.Banner');
         return $service->getList();
     }
 
     /**
-     * 广告渠道详情
+     * 广告详情
      * @return mixed
      */
     public function actionView()
@@ -50,18 +48,17 @@ class BannerController extends RController
     }
 
     /**
-     * 创建广告渠道
+     * 创建广告
      * @return mixed
      */
     public function actionCreate()
     {
         $service = $this->getService('Ad.Banner');
         return $service->create();
-
     }
 
     /**
-     * 修改广告渠道
+     * 修改广告
      * @return mixed
      */
     public function actionUpdate()
@@ -71,13 +68,23 @@ class BannerController extends RController
     }
 
     /**
-     * 删除广告渠道
+     * 删除广告
      * @return mixed
      */
     public function actionDelete()
     {
         $service = $this->getService('Ad.Banner');
         return $service->delete();
+    }
+
+    /**
+     *  广告冻结|解冻
+     * @return mixed
+     */
+    public function actionLock()
+    {
+        $service = $this->getService('Ad.Banner');
+        return $service->lock();
     }
 
 }

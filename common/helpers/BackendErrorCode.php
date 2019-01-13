@@ -30,6 +30,10 @@ class BackendErrorCode extends ErrorCode
     const ERR_NUMBER = 1010;
     /** 表单重复提交 **/
     const ERR_FORM_VALIDATE = 400;
+    /**冻结账户 **/
+    const ERR_LOCKED_ACCOUNTS = -7;
+    /**无效账户 **/
+    const ERR_INVALID_ACCOUNTS = -8;
     /** token 无效 **/
     const ERR_TOKEN_OUT_TIME = -9;
     /** 表单验证错误 */

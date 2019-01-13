@@ -17,50 +17,68 @@ use yii;
 
 class RController extends ActiveController
 {
+
     public $enableCsrfValidation = false;
 
-    public $modelClass = 'backend\models\Admin';
+    public $modelClass = 'backend\models\Emp';
 
-    public $except_token = ['login', 'options', 'csrftoken','upload-img'];
+    /**不检查token的方法**/
+    public $except_token = ['login', 'options', 'csrftoken','upload-img','upload'];
 
+    /**检查_csrfToken的方法**/
     public $check_form_token_route = ['create'];
 
+
+    /**
+     * @param yii\base\Action $action
+     * @return bool
+     * @author von
+     */
     public function beforeAction($action)
     {
-        /*token检查*/
-        if (!in_array($action->id, $this->except_token)) {
-            $service = $this->getService('Admin.Admin');
-            $res = $service->checkToken();
-            if (is_array($res)) {
-                header("Content-Type:application/json;charset=UTF-8");
-                echo Json::encode($res);
-                exit();
-            }
+        if (Yii::$app->request->getMethod()=="OPTIONS"){
+            self::setHeader();
+            exit();
         }
-
+        /**token检查**/
+//        if (!in_array($action->id, $this->except_token)) {
+//            $service = $this->getService('Emp.Emp');
+//            $res = $service->checkToken();
+//            if (is_array($res)) {
+//                header("Content-Type:application/json;charset=UTF-8");
+//                echo Json::encode($res);
+//                exit();
+//            }
+//        }
+        /**表单提交验证**/
         if (parent::beforeAction($action)) {
             if ($this->enableCsrfValidation) {
                 Yii::$app->getRequest()->getCsrfToken(true);
             }
             return true;
         };
-
-        if (Yii::$app->request->getMethod()=="OPTIONS"){
-            header('Access-Control-Allow-Origin:*');
-            header('Access-Control-Allow-Headers:*');
-            header('Access-Control-Allow-Methods: *');
-            header('Access-Control-Allow-Credentials:true');
-            exit();
-        }
     }
 
-    public function actionOptions()
-    {
+    /**
+     * 设置header头部
+     * @author von
+     */
+    public function setHeader(){
         header('Access-Control-Allow-Origin:*');
         header('Access-Control-Allow-Headers:*');
         header('Access-Control-Allow-Methods: *');
         header('Access-Control-Allow-Credentials:true');
-        exit();
+        return true;
+    }
+
+
+    /**
+     * 预请求
+     * @author von
+     */
+    public function actionOptions()
+    {
+        self::setHeader();
     }
 
     /**

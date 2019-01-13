@@ -17,6 +17,7 @@ use common\helpers\WeHelper;
 use common\helpers\User as userHelpers;
 use yii\data\Pagination;
 use Yii;
+use  yii\behaviors\TimestampBehavior;
 
 class User extends \backend\models\BaseModel
 {
@@ -31,9 +32,21 @@ class User extends \backend\models\BaseModel
      * @version : V1.0.0
      */
     public static function tableName()
-{
-    return '{{%user}}';
-}
+    {
+        return '{{%user}}';
+    }
+
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'created_at',
+                'updatedAtAttribute' => 'updated_at',
+                'value' => time(),
+            ],
+        ];
+    }
 
     /**
      * @desc: 字段标签
@@ -45,19 +58,34 @@ class User extends \backend\models\BaseModel
     public function attributeLabels()
     {
         return [
+
             'id' => 'ID',
+            'openid' => 'openid',
             'nickname' => '昵称',
-            'password' => '密码',
             'username' => '真实姓名',
             'mobile' => '手机号码',
             'email' => '邮箱',
+            'id_card' => '身份证号',
+            'mobile_validate' => '手机验证',
+            'email_validate' => '邮箱验证',
+            'verified' => '证件实名效验',
+            'headimgurl' => '头像',
+            'sex' => '性别',
+            'age' => '年龄',
+            'province_id' => '省份',
+            'city_id' => '城市',
+            'district_id' => '区域',
+            'user_role_id' => '用户角色',
+            'password' => '密码',
+            'pay_password' => '支付密码',
             'is_delete' => '是否删除',
             'is_lock' => '是否锁定',
-            'created_at' => '创建时间',
+            'created_at' => '注册时间',
             'updated_at' => '更新时间',
-            'district' => '区域',
-            'province' => '省份',
-            'city' => '城市',
+            'reg_client' => '注册来源',
+            'last_time' => '近期登录时间',
+            'last_ip' => '近期登录ip',
+            'reg_ip' => '注册ip',
         ];
     }
 
@@ -71,7 +99,7 @@ class User extends \backend\models\BaseModel
     public function rules()
     {
         return [
-            [['mobile', 'province', 'city', 'district'], 'required', 'message' => '{attribute}不能为空', 'on' => ['create', 'update']],//必填字段 【创建|更新】
+            [['mobile', 'province_id', 'city_id', 'district_id'], 'required', 'message' => '{attribute}不能为空', 'on' => ['create', 'update']],//必填字段 【创建|更新】
             [['mobile'], 'match', 'pattern' => '/^[1][345789][0-9]{9}$/', 'message' => '手机号码格式错误', 'on' => ['create', 'update']],//手机号码【创建|更新】
             ['mobile', 'unique', 'targetClass' => '\backend\models\User', 'message' => '该手机号码已注册', 'on' => ['create', 'update']],//手机号码查重【创建|更新】
 
@@ -82,9 +110,9 @@ class User extends \backend\models\BaseModel
             [['email'], 'string', 'max' => 50, 'tooLong' => '邮箱地址最多50个字符'],
             ['email', 'email', 'message' => '邮箱格式错误'],
             ['sex', 'in', 'range' => [0, 1, 2], 'message' => '性别错误'],
-            [['mobile_validate', 'email_validate', 'is_delete', 'is_lock'], 'in', 'range' => [0, 1], 'message' => '数据错误'],
+            [['mobile_validate', 'email_validate', 'verified', 'is_delete', 'is_lock'], 'in', 'range' => [0, 1], 'message' => '数据错误'],
 
-            [['nickname', 'openid','profile_pic' , 'share_code'], 'safe'],
+            [['nickname', 'openid', 'headimgurl', 'share_code','pay_password'], 'safe'],
 
         ];
     }
@@ -100,7 +128,6 @@ class User extends \backend\models\BaseModel
             if ($this->isNewRecord) {
                 $this->password = $this->setPassword($this->password);
                 $this->reg_ip = $this->last_ip = ip2long(Yii::$app->request->userIP);
-                $this->reg_time = $this->last_time = time();
             }
             return true;
         } else {
@@ -149,6 +176,7 @@ class User extends \backend\models\BaseModel
      */
     public function create_data($data)
     {
+
         $model = new self();
         $model->scenario = 'create';
         $model->attributes = $data;
@@ -233,7 +261,7 @@ class User extends \backend\models\BaseModel
         ];
     }
 
-    public function lists_data($where = [], $order = 'reg_time desc', $pageSize = 20)
+    public function lists_data($where = [], $order = 'created_at desc', $pageSize = 20)
     {
         $model = self::getQuery($where);
         $totalCount = $model->count();
@@ -241,17 +269,11 @@ class User extends \backend\models\BaseModel
             'defaultPageSize' => $pageSize,
             'totalCount' => $totalCount,
         ]);
-        $lists = $model->select(['id', 'nickname', 'username', 'mobile', 'email', 'sex', 'is_lock', 'reg_time'])->orderBy($order)
+        $lists = $model->select(['id', 'nickname', 'username', 'mobile', 'email', 'sex', 'is_lock', 'created_at'])->orderBy($order)
             ->offset($pagination->offset)
             ->limit($pagination->limit)
             ->asArray()
             ->all();
-        $lists_data = [];
-        foreach ($lists as $key => $list) {
-            $list['reg_time_format'] = date('Y-m-d H:i:s', $list['reg_time']);
-            $list['sex_text'] = userHelpers::get_sex_text($list['sex']);
-            $lists_data[] = $list;
-        }
         $param[ConstantHelper::COUNT] = (int)$pagination->totalCount;
         $param[ConstantHelper::PAGE] = $pagination->page + 1;
         $param[ConstantHelper::PAGE_SIZE] = $pagination->pageSize;
@@ -276,16 +298,17 @@ class User extends \backend\models\BaseModel
             ->andFilterWhere(['like', 'mobile', $where['mobile']])
             ->andFilterWhere(['sex' => $where['sex']]);
         if (isset($where['reg_start_time']) && isset($where['reg_end_time'])) {
-            $query->andWhere(['between', 'reg_time', $where['reg_start_time'], $where['reg_end_time']]);
+            $query->andWhere(['between', 'created_at', $where['reg_start_time'], $where['reg_end_time']]);
         } elseif (isset($where['reg_start_time'])) {
-            $query->andWhere(['>=', 'reg_time', $where['reg_start_time']]);
+            $query->andWhere(['>=', 'created_at', $where['reg_start_time']]);
         } elseif (isset($where['reg_end_time'])) {
-            $query->andWhere(['<=', 'reg_time', $where['reg_end_time']]);
+            $query->andWhere(['<=', 'created_at', $where['reg_end_time']]);
         }
         return $query;
     }
 
-    public function lock($user_id,$lock=0){
+    public function lock($user_id, $lock = 0)
+    {
         $user = self::findOne($user_id);
         if ($user) {
             $user->is_lock = $lock;

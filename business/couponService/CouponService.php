@@ -36,7 +36,7 @@ class CouponService implements IBannerService
     {
         $get = Yii::$app->request->get();
         try {
-            $get = Param::setNull(['coupon_name', 'coupon_price', 'coupon_val', 'is_lock', 'type'], $get);
+            $get = Param::setNull(['coupon_name', 'restriction', 'coupon_value', 'is_lock', 'type'], $get);
             $res = $this->model->getList($get);
             return WeHelper::jsonReturn($res, BackendErrorCode::ERR_SUCCESS);
         } catch (\Exception $e) {
@@ -47,9 +47,9 @@ class CouponService implements IBannerService
     }
 
     /**
-     * 添加数据
-     * @param $params
-     * @return boolean
+     * @return array|bool|null
+     *
+     * @author von
      */
     public function create()
     {
@@ -82,12 +82,13 @@ class CouponService implements IBannerService
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_OBJECT_NON);
             }
             $this->model = $res;
-            if ($this->model->modifyCoupon($post) !== true) {
-                return WeHelper::jsonReturn(null, BackendErrorCode::ERR_MODEL_VALIDATE);
+            $res = $this->model->modifyCoupon($post);
+            if ($res !== true) {
+                return WeHelper::jsonReturn($res, BackendErrorCode::ERR_MODEL_VALIDATE);
             }
             return WeHelper::jsonReturn(null, BackendErrorCode::ERR_SUCCESS);
         } catch (\Exception $e) {
-            return WeHelper::jsonReturn([$e->getMessage()], BackendErrorCode::ERR_DB);
+            return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
         }
         return true;
     }
@@ -101,12 +102,10 @@ class CouponService implements IBannerService
     {
         $get = Yii::$app->request->get();
         try {
-
             $res = $this->model->findOneById($get['id']);
             if (!$res) {
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_OBJECT_NON);
             }
-
             $this->model = $res;
 
             $res = $this->model->getView();
@@ -140,9 +139,7 @@ class CouponService implements IBannerService
             } else {
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_MODEL_VALIDATE);
             }
-
         } catch (\Exception $e) {
-            return $e->getMessage();
             return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
         }
         return true;
@@ -202,22 +199,21 @@ class CouponService implements IBannerService
             $success_number = 0;//成功的用户数量
             $failed_number = 0;//失败的用户数量
             $insert = [];
-            $success_ids=[];
+            $success_ids = [];
             foreach ($user_ids as $user_id) {
                 $this_users = UserCoupon::findAllByUserIdAndCouponId($user_id, $res->id);//这个用户领取的优惠券数量+成功的计数
                 /**检查这个用户领取的优惠券数量+成功的计数**/
-                !isset($success_ids[$user_id])?$success_ids[$user_id]=0:'';
-                if ((count($this_users)+(int)$success_ids[$user_id]) >= $this->model->max_number) {
+                !isset($success_ids[$user_id]) ? $success_ids[$user_id] = 0 : '';
+                if ((count($this_users) + (int)$success_ids[$user_id]) >= $this->model->max_get_number) {
                     $failed_number += 1;
                     continue;
                 }
-                /**检查用户是否合法**/
+                /**检查用户是否合法还没有写**/
                 if ((int)($true_coupon_number - $success_number) > 0) {
                     /**组装用户优惠券数据**/
                     $insert[] = [$post['coupon_id'], $user_id, 0, 0, 0, 0, time(), time()];
                     $success_number += 1;
-
-                    $success_ids[$user_id]+=1;
+                    $success_ids[$user_id] += 1;
                 } else {
                     /**发完跳出循环**/
                     $failed_number = count($user_ids) - $success_number;
@@ -247,6 +243,7 @@ class CouponService implements IBannerService
             }
         } catch (\Exception $e) {
             $transcation->rollBack();
+            Yii::warning('发放优惠券失败');
             return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
         }
         return true;

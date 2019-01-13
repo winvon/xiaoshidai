@@ -6,38 +6,41 @@ return [
         'controller' => 'public',
         'pluralize' => false,
         'extraPatterns' => [
+            'GET test' => 'test',
             'GET csrftoken' => 'csrftoken',
             'POST,OPTIONS upload/img/<type>' => 'upload-img',
+            'POST,OPTIONS upload' => 'upload',
         ],
     ],
     [
         'class' => 'yii\rest\UrlRule',
-        'controller' => 'admin/admin',
+        'controller' => ['emp' => 'emp/emp'],
         'pluralize' => false,
         'extraPatterns' => [
             'POST,OPTIONS login' => 'login',
             'PUT,OPTIONS change/password' => 'change-password',
             'PUT,OPTIONS  lock/<id>' => 'lock',
-            'PUT,OPTIONS  un-lock/<id>' => 'un-lock',
         ],
     ],
     [
         'class' => 'yii\rest\UrlRule',
-        'controller' => ['admin/banner' => 'ad/banner'],
+        'controller' => ['ad' => 'ad/ad'],
         'pluralize' => false,
         'extraPatterns' => [
+            'PUT,OPTIONS  <id>/show' => 'show',
         ],
     ],
     [
         'class' => 'yii\rest\UrlRule',
-        'controller' => ['admin/banner/item' => 'ad/banner-item'],
+        'controller' => ['banner'=>'ad/banner'],
         'pluralize' => false,
         'extraPatterns' => [
+            'PUT,OPTIONS  <id>/lock' => 'lock',
         ],
     ],
     [
         'class' => 'yii\rest\UrlRule',
-        'controller' => ['admin/coupon' => 'coupon/coupon'],
+        'controller' => ['coupon' => 'coupon/coupon'],
         'pluralize' => false,
         'extraPatterns' => [
             'POST,OPTIONS   giveout' => 'giveout',
@@ -46,19 +49,17 @@ return [
     ],
     [
         'class' => 'yii\rest\UrlRule',
-        'controller' => ['admin/user/coupon' => 'coupon/user-coupon'],
+        'controller' => ['user/coupon' => 'coupon/user-coupon'],
         'pluralize' => false,
         'extraPatterns' => [
             'PUT,OPTIONS lock/<id>' => 'lock',
-            'PUT,OPTIONS un-lock/<id>' => 'un-lock',
         ],
     ],
     [
         'class' => 'yii\rest\UrlRule',
-        'controller' => ['product/category' => 'goods/category'],
+        'controller' => 'product/category',
         'pluralize' => false,
         'extraPatterns' => [
-            'OPTIONS  options' => 'options',
             'PUT,OPTIONS show/<id>' => 'show',
             'GET,OPTIONS tree' => 'index-tree',
         ],
@@ -69,8 +70,8 @@ return [
         'pluralize' => false,
         'extraPatterns' => [
             'OPTIONS  options' => 'options',
-            'GET <id>/lock' => 'lock',
-            'GET <id>/unlock' => 'unlock',
+            'GET,OPTIONS <id>/lock' => 'lock',
+            'GET,OPTIONS <id>/unlock' => 'unlock',
         ],
     ],
     [
@@ -82,14 +83,14 @@ return [
     ],
     [
         'class' => 'yii\rest\UrlRule',
-        'controller' => 'goods/goods',
+        'controller' => 'product/product',
         'pluralize' => false,
-        'extraPatterns' =>[
+        'extraPatterns' => [
         ],
     ],
     [
         'class' => 'yii\rest\UrlRule',
-        'controller' => 'goods/item',
+        'controller' => 'product/chapters',
         'pluralize' => false,
         'extraPatterns' => [
         ],
@@ -99,7 +100,17 @@ return [
         'controller' => ['rbac' => 'rbac/rbac'],
         'pluralize' => false,
         'extraPatterns' => [
-            'GET permissions'=>'permissions'
+            'GET permissions' => 'permissions',
+        ],
+    ],
+    [
+        'class' => 'yii\rest\UrlRule',
+        'controller' => ['menu' => 'rbac/menu'],
+        'pluralize' => false,
+        'extraPatterns' => [
+            'PUT,OPTIONS <id>/sort' => 'sort',//排序
+            'PUT,OPTIONS <id>/show' => 'show',//显示
+            'GET,OPTIONS  menusname' => 'get-menus-name',//父级菜单名称
         ],
     ],
 ];
