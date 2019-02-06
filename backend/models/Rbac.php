@@ -26,7 +26,6 @@ class Rbac extends Model
 
     public $data;
 
-
     public $route;
 
     public $method;

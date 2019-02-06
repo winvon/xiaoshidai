@@ -15,7 +15,7 @@ namespace common\helpers;
  */
 class ConstantHelper
 {
-   /******************系统通用属性******************/
+    /******************系统通用属性******************/
     /* 是否冻结（0-未冻结；1-冻结） */
     CONST IS_LOCK_FALSE = 0;
     CONST IS_LOCK_TRUE = 1;
@@ -23,6 +23,10 @@ class ConstantHelper
     /* 是否删除（0-未删除；1-删除） */
     CONST IS_DELETE_FALSE = 0;
     CONST IS_DELETE_TRUE = 1;
+
+    /* 是否删除（0显示；1隐藏） */
+    CONST IS_SHOW_FALSE = 1;
+    CONST IS_SHOW_TRUE = 0;
 
     /* 支付方式（weixin-微信支付；alipay-支付宝） */
     CONST PAY_WAY_WEIXIN = 'weixin';
@@ -56,13 +60,40 @@ class ConstantHelper
     CONST COUPON_TYPE_REDUCE = 2;
     CONST COUPON_TYPE_DISCOUNT = 3;
 
-    /**web左侧菜单显示(是否显示.0否,1是)**/
-    CONST MENU_IS_DISPLAY_FALSE=0;
-    CONST MENU_IS_DISPLAY_TRUE=1;
+    /* 用户优惠券使用（0未使用，1使用） */
+    CONST COUPON_IS_CONSUME_FALSE = 0;
+    CONST COUPON_IS_CONSUME_TRUE = 1;
+
+    /**web左侧菜单显示(是否显示.0显示,1隐藏)**/
+    CONST MENU_IS_DISPLAY_TRUE = 0;
+    CONST MENU_IS_DISPLAY_FALSE = 1;
+
+    /**菜单分类('manage','ios','android')**/
+    CONST MENU_SOURCE_MANAGE = 'manage';
+    CONST MENU_SOURCE_IOS = 'ios';
+    CONST MENU_SOURCE_ANDROID = 'android';
+
+
+    /**推荐分类('weixin','ios','android')**/
+    CONST CATEGORY_RELEASE_SOURCE_WEIXIN = 'weixin';
+    CONST CATEGORY_RELEASE_SOURCE_IOS = 'ios';
+    CONST CATEGORY_RELEASE_SOURCE_ANDROID = 'android';
 
     /**广告位显示(是否显示.0否,1是)**/
-    CONST AD_IS_SHOW_FALSE=1;
-    CONST AD_IS_SHOW_TRUE=0;
+    CONST AD_IS_SHOW_TRUE = 0;
+    CONST AD_IS_SHOW_FALSE = 1;
+
+    /**产品分类type(1产品课程、2商城)**/
+    CONST CATEGORY_TYPE_COURSE = 1;
+    CONST CATEGORY_TYPE_STORE = 2;
+
+    /**产品分类类别type(1文字分类，2图标)**/
+    CONST CATEGORY_CATEGORY_TYPE_WORD = 1;
+    CONST CATEGORY_CATEGORY_TYPE_ICON = 2;
+
+    /**营销活动type(1优惠券,2积分)**/
+    CONST MARKET_ACTIVE_TYPE_COUPON = 1;
+    CONST MARKET_ACTIVE_TYPE_POINTS = 2;
 
 
     /**

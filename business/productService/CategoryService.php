@@ -35,26 +35,25 @@ class CategoryService implements ICategoryService
     {
         $get = Yii::$app->request->get();
         try {
-            $get = Param::setNull(['category_name','parent_id'], $get);
+            $get = Param::setNull(['category_name','parent_id','type','category_type'], $get);
             $res = $this->model->getList($get);
             return WeHelper::jsonReturn($res, BackendErrorCode::ERR_SUCCESS);
         } catch (\Exception $e) {
-            return $e->getMessage();
             return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
         }
         return $res;
     }
 
     /**
-     * 获取列表
+     * 获取树形结构
      * @return array|null|string
-     *
      * @author von
      */
     public function getListByTree()
     {
         $get = Yii::$app->request->get();
         try {
+            $get=Param::setNull(['type','category_type'],$get);
             $res = $this->model->getListByTree($get);
             return WeHelper::jsonReturn($res, BackendErrorCode::ERR_SUCCESS);
         } catch (\Exception $e) {
@@ -155,26 +154,26 @@ class CategoryService implements ICategoryService
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_OBJECT_NON);
             }
             $this->model = $res;
-
-            if ($this->model->del() === true) {
+            $res= $this->model->del();
+            if ($res === true) {
                 return WeHelper::jsonReturn(null, BackendErrorCode::ERR_SUCCESS);
-            } elseif ($this->model->del() === false) {
-                return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DELETE);
-            } else {
-                return WeHelper::jsonReturn(null, BackendErrorCode::ERR_MODEL_VALIDATE);
+            } elseif ($res === false) {
+                return WeHelper::jsonReturn($res, BackendErrorCode::ERR_DELETE);
+            }
+            if (is_array($res)) {
+                return WeHelper::jsonReturn($res, BackendErrorCode::ERR_MODEL_VALIDATE);
             }
 
         } catch (\Exception $e) {
-            return $e->getMessage();
             return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
         }
         return true;
     }
 
     /**
-     * 显示与隐藏
-     * @param $params
-     * @return boolean
+     * @return array|bool|null
+     *
+     * @author von
      */
     public function show()
     {
@@ -185,7 +184,6 @@ class CategoryService implements ICategoryService
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_OBJECT_NON);
             }
             $this->model = $res;
-
             $res = $this->model->showCategory();
             if ($res === true) {
                 return WeHelper::jsonReturn(null, BackendErrorCode::ERR_SUCCESS);
@@ -193,7 +191,34 @@ class CategoryService implements ICategoryService
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_MODEL_VALIDATE);
             }
         } catch (\Exception $e) {
-            return WeHelper::jsonReturn([$e->getMessage()], BackendErrorCode::ERR_DB);
+            return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
+        }
+        return true;
+    }
+
+
+    /**
+     * @return array|bool|null
+     * @author von
+     */
+    public function sort()
+    {
+        $get = Yii::$app->request->get();
+        $post = Param::getParam();
+        try {
+            $res = $this->model->findOneById($get['id']);
+            if (!$res) {
+                return WeHelper::jsonReturn($res, BackendErrorCode::ERR_OBJECT_NON);
+            }
+            $this->model = $res;
+            $res = $this->model->sort($post);
+            if ($res === true) {
+                return WeHelper::jsonReturn(null, BackendErrorCode::ERR_SUCCESS);
+            } else {
+                return WeHelper::jsonReturn($res, BackendErrorCode::ERR_MODEL_VALIDATE);
+            }
+        } catch (\Exception $e) {
+            return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
         }
         return true;
     }

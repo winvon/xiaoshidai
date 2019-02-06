@@ -25,4 +25,10 @@ return [
     'rbac' => [
         'class' => 'backend\modules\rbac\Module',
     ],
+    'special' => [
+        'class' => 'backend\modules\special\Module',
+    ],
+    'market_active' => [
+        'class' => 'backend\modules\market_active\Module',
+    ],
 ];

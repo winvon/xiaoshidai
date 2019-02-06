@@ -22,6 +22,8 @@ class BackendErrorCode extends ErrorCode
     const ERR_USER_LOCKED = 1006;
     /** 对象为空 **/
     const ERR_OBJECT_NON = 1007;
+    /** 对象为空 **/
+    const ERR_LOCK = 1008;
     /** 身份错误 **/
     const ERR_IDENTITY = 1001;
     /** 身份错误 **/

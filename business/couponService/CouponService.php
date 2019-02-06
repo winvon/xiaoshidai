@@ -28,6 +28,31 @@ class CouponService implements IBannerService
     }
 
     /**
+     * 是否冻结
+     * @return array|bool|null
+     * @author von
+     */
+    public function checkLock()
+    {
+        $id = Yii::$app->request->get('id');
+        try {
+            $res = $this->model->findOneById($id);
+            if ($res) {
+                if ($res->is_lock===ConstantHelper::IS_LOCK_TRUE){
+                    return false;
+                }
+                if ($res->is_lock===ConstantHelper::IS_LOCK_TRUE){
+                    return true;
+                }
+            }
+        } catch (\Exception $e) {
+            Yii::warning($e->getMessage());
+            return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
+        }
+        return true;
+    }
+
+    /**
      * 获取列表
      * @param $params
      * @return mixed

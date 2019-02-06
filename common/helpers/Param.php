@@ -89,7 +89,7 @@ class Param
     }
 
     /**
-     * 从header或者param配置获取参数
+     * 从header或者get或者param配置获取参数
      * @param $key
      * @return array|bool|string
      * @author von
@@ -99,6 +99,9 @@ class Param
         $header = Yii::$app->request->headers;
         if (!empty($header->get($key))) {
             return $header->get($key);
+        }
+        if (!empty(Yii::$app->request->get($key))) {
+            return Yii::$app->request->get($key);
         }
         if (!empty(Yii::$app->params[$key])) {
             return Yii::$app->params[$key];

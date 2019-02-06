@@ -19,13 +19,7 @@ class AdController extends RController
 
     public function actions()
     {
-        $action = parent::actions();
-        unset($action['index']);
-        unset($action['update']);
-        unset($action['create']);
-        unset($action['delete']);
-        unset($action['view']);
-        return $action;
+        return [];
     }
 
 

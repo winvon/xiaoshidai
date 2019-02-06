@@ -22,12 +22,7 @@ class PublicController extends RController
 {
     public function actions()
     {
-        $action = parent::actions();
-        unset($action['index']);
-        unset($action['update']);
-        unset($action['create']);
-        unset($action['delete']);
-        return $action;
+        return [];
     }
 
     /**
@@ -99,8 +94,8 @@ class PublicController extends RController
         } catch (\Exception $e) {
             return WeHelper::jsonReturn([$e->getMessage()], BackendErrorCode::ERR_DB);
         }
-
     }
+
 
     /**
      * 测试
@@ -108,25 +103,71 @@ class PublicController extends RController
      */
     public function actionTest()
     {
-        $array = [1, 2, 3, 4, 5, 6, 7];
-        var_dump(self::leftOneToLast($array, 1));
+
+        $redis = Yii::$app->redis;
+        $list_name='miaosha';
+        $num=500;
+        while ($redis->llen($list_name)>0){
+            echo $redis->lpop($list_name).'秒杀成功用户<br>';
+        }
+        die;
+    }
+
+
+    public function getFileLines($filename, $startLine = 1, $endLine = 50, $method = 'rb')
+    {
+        $content = array();
+        $count = $endLine - $startLine;
+        // 判断php版本（因为要用到SplFileObject，PHP>=5.1.0）
+        if (version_compare(PHP_VERSION, '5.1.0', '>=')) {
+            $fp = new \SplFileObject($filename, $method);
+            $fp->seek($startLine - 1);// 转到第N行, seek方法参数从0开始计数
+            for ($i = 0; $i <= $count; ++$i) {
+                $content[] = $fp->current();// current()获取当前行内容
+                $fp->next();// 下一行
+            }
+        } else {//PHP<5.1
+            $fp = fopen($filename, $method);
+            if (!$fp) return 'error:can not read file';
+            for ($i = 1; $i < $startLine; ++$i) {// 跳过前$startLine行
+                fgets($fp);
+            }
+            for ($i; $i <= $endLine; ++$i) {
+                $content[] = fgets($fp);// 读取文件行内容
+            }
+            fclose($fp);
+        }
+        return array_filter($content); // array_filter过滤：false,null,''
+    }
+
+
+    public static function rightOneToFirst($array, $n)
+    {
+        $row = [];
+        $count = count($array); //
+        for ($i = 0; $i < $count; $i++) {
+            if ((int)$i < (int)$n) {//移动的位置作为条件判断
+                $row[] = $array[$count - $i - $n];
+            } else {
+                $row[] = $array[$i - $n];
+            };
+        }
+        return $row;
     }
 
     /**
-     * 测试
+     * 前往后移动
      * @param $array
      * @param $n
      * @return array
-     *
      * @author von
      */
     public static function leftOneToLast($array, $n)
     {
-        $tmp = '';
         $row = [];
-        for ($i = count($array) - 1; $i > 0; $i--) {//7-1
-            if (($n + $i) >= count($array)) {
-                $row[] = $array[$i];
+        for ($i = 0; $i < count($array); $i++) {
+            if (($n + $i) < count($array)) {//  7
+                $row[] = $array[$n + $i];
             } else {
                 $row[] = $array[($n + $i) - count($array)];
             }

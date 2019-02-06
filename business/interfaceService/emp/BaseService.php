@@ -11,9 +11,6 @@ namespace business\interfaceService\emp;
 
 interface  BaseService
 {
-
-
-
     /**
      * 获取列表
      * @param $params

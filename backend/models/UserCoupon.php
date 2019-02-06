@@ -154,6 +154,7 @@ class UserCoupon extends \backend\models\BaseModel
             ->andFilterWhere(['like','xsd_coupon.coupon_name' , $params['coupon_name']])
             ->andFilterWhere(['xsd_user_coupon.is_lock' => $params['is_lock']])
             ->andFilterWhere(['xsd_user_coupon.is_consume' => $params['is_consume']])
+            ->andFilterWhere(['xsd_user_coupon.user_id' => $params['user_id']])
             ;
     }
 
@@ -167,11 +168,32 @@ class UserCoupon extends \backend\models\BaseModel
             'id' => $this->id,
             'coupon_name' => @$this->coupon->coupon_name,
             'username' => @$this->user->username,
+            'user_id' => $this->user_id,
+            'mobile' => @$this->user->mobile,
             'is_lock' => $this->is_lock,
             'is_consume' => $this->is_consume,
             'consume_time' => $this->consume_time == 0 ? '' : $this->consume_time,
             'updated_at' => $this->updated_at,
             'created_at' => $this->created_at,
+        ];
+    }
+
+    /**
+     * 处理返回数据格式
+     * @return array
+     */
+    public function getCollectView()
+    {
+        $query=self::find()->where(['is_delete'=>ConstantHelper::IS_DELETE_FALSE])->andWhere(['user_id'=>(int)$this->user_id]);
+       $number=$query->count();
+        $use_number=$query->andWhere(['is_consume'=>ConstantHelper::COUPON_IS_CONSUME_TRUE])->count();
+        return [
+            'coupon_name' => @$this->coupon->coupon_name,
+            'user_id' => $this->user_id,
+            'username' => @$this->user->username,
+            'mobile' => @$this->user->mobile,
+            'number' => $number,
+            'using_status'=> $number==0?0:round($use_number/$number,4)
         ];
     }
 
@@ -195,6 +217,32 @@ class UserCoupon extends \backend\models\BaseModel
      * @param $params
      * @return array
      */
+    public function getUserList($params)
+    {
+        $page_size = Param::getHeaders('page_size');
+        $page = Param::getHeaders('page');
+        $query = self::getQuery($params);
+        $models = $query
+            ->groupBy('user_id')
+            ->limit($page_size)
+            ->offset(($page - 1) * $page_size)
+            ->orderBy('created_at DESC')
+            ->all();
+        $list = [];
+        foreach ($models as $model) {
+            $list[] = $model->getCollectView();
+        }
+        $count = $query->count();
+        $param[ConstantHelper::COUNT] = $count;
+        $param[ConstantHelper::LISTS] = $list;
+        return self::backListFormat($param);
+    }
+
+    /**
+     * 获取用户优惠券详情
+     * @param $params
+     * @return array
+     */
     public function getList($params)
     {
         $page_size = Param::getHeaders('page_size');
@@ -210,9 +258,6 @@ class UserCoupon extends \backend\models\BaseModel
         }
         $count = $query->count();
         $param[ConstantHelper::COUNT] = $count;
-        $param[ConstantHelper::PAGE] = $page;
-        $param[ConstantHelper::PAGE_SIZE] = $page_size;
-        $param[ConstantHelper::PAGE_COUNT] = ceil($count / $page_size);
         $param[ConstantHelper::LISTS] = $list;
         return self::backListFormat($param);
     }

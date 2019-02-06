@@ -10,6 +10,7 @@ namespace business\adService;
 
 use backend\models\Banner;
 use business\interfaceService\emp\IBannerService;
+use common\helpers\ConstantHelper;
 use common\helpers\Param;
 use common\helpers\BackendErrorCode;
 use common\helpers\WeHelper;
@@ -23,6 +24,31 @@ class BannerService implements IBannerService
     public function __construct()
     {
         $this->model = new Banner();
+    }
+
+    /**
+     * 是否冻结
+     * @return array|bool|null
+     * @author von
+     */
+    public function checkLock()
+    {
+        $id = Yii::$app->request->get('id');
+        try {
+            $res = $this->model->findOneById($id);
+            if ($res) {
+                if ($res->is_lock===ConstantHelper::IS_LOCK_TRUE){
+                    return false;
+                }
+                if ($res->is_lock===ConstantHelper::IS_LOCK_TRUE){
+                    return true;
+                }
+            }
+        } catch (\Exception $e) {
+            Yii::warning($e->getMessage());
+            return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
+        }
+        return true;
     }
 
     /**

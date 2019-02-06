@@ -155,8 +155,7 @@ class Emp extends \backend\models\BaseModel
         $this->last_time = time();
         $this->last_ip = ip2long(Yii::$app->request->userIP);
         if (!$this->save()) {
-            var_dump($this->getErrors());
-            die;
+           return $this->getErrors();
         }
         return $token;
     }
@@ -252,10 +251,32 @@ class Emp extends \backend\models\BaseModel
             'role_ids' => $this->role_ids,
             'is_lock' => $this->is_lock,
             'last_ip' => long2ip($this->last_ip),
-            'last_time' => $this->last_time,
+            'last_time' => $this->last_time == null ? 0 : $this->last_time,
             'updated_at' => $this->updated_at,
             'created_at' => $this->created_at,
         ];
+    }
+
+    /**
+     * 获取详情
+     * @return array
+     */
+    public function getDetail()
+    {
+        $role_ids = explode(',', $this->role_ids);
+        $role = [];
+        foreach ($role_ids as $role_id) {
+            $roleModel = Role::findOne($role_id);
+            if ($roleModel != null) {
+                $role[] = [
+                    'id' => $roleModel->id,
+                    'role_name' => $roleModel->role_name,
+                ];
+            }
+        }
+        $array = $this->getView();
+        $array['roles'] = $role;
+        return $array;
     }
 
     /**
@@ -314,7 +335,7 @@ class Emp extends \backend\models\BaseModel
         return $query = self::find()
             ->where(['is_delete' => self::DELETE_NOT])
 //            ->andWhere(['is_admin' => self::SUPER_ADMIN_NO])
-            ->andFilterWhere(['job_number' => $params['job_number']])
+            ->andFilterWhere(['like','job_number' , $params['job_number']])
             ->andFilterWhere(['like', 'username', $params['username']])
             ->andFilterWhere(['like', 'email', $params['email']])
             ->andFilterWhere(['like', 'mobile', $params['mobile']])
@@ -428,5 +449,32 @@ class Emp extends \backend\models\BaseModel
             return true;
         }
         return $this->getErrors();
+    }
+
+    public function getAuth()
+    {
+        $role_ids = explode(',', $this->role_ids);
+        $auth_ids = [];
+        foreach ($role_ids as $role_id) {
+            $roleModel = Role::findOne($role_id);
+            if ($roleModel != null) {
+                $auth_ids = array_merge($auth_ids, explode(',', $roleModel->auth_ids));
+            }
+        }
+        $auth_ids = array_values(array_filter(array_unique($auth_ids)));
+        sort($auth_ids);
+        $auths=[];
+        foreach ($auth_ids as $auth_id) {
+            $authModel = Auth::findOne(['id' => $auth_id, 'is_delete' => ConstantHelper::IS_DELETE_FALSE]);
+            if ($authModel!=null){
+                $auths[]=[
+                    'id'=>$authModel->id,
+                    'auth_name'=>$authModel->auth_name,
+                    'route_url'=>$authModel->route_url,
+                    'is_lock'=>$authModel->is_lock,
+                ];
+            }
+        }
+       return $auths;
     }
 }

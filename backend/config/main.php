@@ -25,7 +25,7 @@ return [
 //            'format' => 'json',
             'on beforeSend' => function ($event) {
                 $response = $event->sender;
-                if ( in_array($response->statusCode,[400])) {
+                if(in_array($response->statusCode,[400,403])) {
                     $response->data = \common\helpers\WeHelper::jsonReturn(null,$response->statusCode);
                     $response->statusCode = 200;
                 }

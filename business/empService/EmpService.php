@@ -149,8 +149,8 @@ class EmpService implements IEmpService
             }
             $this->model = $res;
             $res->token = $this->model->setToken();
-
-            return WeHelper::jsonReturn(array_merge($this->model->getView(), ['token' => $res->token]), ErrorCode::ERR_SUCCESS);
+            $auth=$res->auth;
+            return WeHelper::jsonReturn(array_merge($this->model->getView(), ['token' => $res->token,'auth'=>$auth]), ErrorCode::ERR_SUCCESS);
         } catch (\Exception $e) {
             return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
         }
@@ -211,7 +211,6 @@ class EmpService implements IEmpService
     /**
      * 数据详情
      * @return array|bool|null
-     *
      * @author von
      */
     public function view()
@@ -223,7 +222,7 @@ class EmpService implements IEmpService
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_OBJECT_NON);
             }
             $this->model = $res;
-            $res = $this->model->getView();
+            $res = $this->model->getDetail();
             return WeHelper::jsonReturn($res, BackendErrorCode::ERR_SUCCESS);
 
         } catch (\Exception $e) {

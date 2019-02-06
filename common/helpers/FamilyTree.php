@@ -124,7 +124,6 @@ class FamilyTree
 
     /**
      * 获取某节点的所有祖先节点
-     *
      * @param $id
      * @return array
      */
@@ -153,6 +152,49 @@ class FamilyTree
             }
         }
         return $nodes;
+    }
+
+
+    /**
+     * 数据列表转换成树
+     *
+     * @param  array   $dataArr   数据列表
+     * @param  integer $rootId    根节点ID
+     * @param  string  $pkName    主键
+     * @param  string  $pIdName   父节点名称
+     * @param  string  $childName 子节点名称
+     * @return array  转换后的树
+     */
+    public  function  ListToTree($dataArr, $rootId = 0, $pkName = 'id', $pIdName = 'parent_id', $childName = 'children')
+    {
+        $tree = [];
+        if (is_array($dataArr))
+        {
+            //1.0 创建基于主键的数组引用
+            $referList  = [];
+            foreach ($dataArr as $key => & $sorData)
+            {
+                $referList[$sorData[$pkName]] =& $dataArr[$key];
+            }
+            //2.0 list 转换为 tree
+            foreach ($dataArr as $key => $data)
+            {
+                $pId = $data[$pIdName];
+                if ($rootId == $pId) //一级
+                {
+                    $tree[] =& $dataArr[$key];
+                }
+                else //多级
+                {
+                    if (isset($referList[$pId]))
+                    {
+                         $pNode               =& $referList[$pId];
+                         $pNode[$childName][] =& $dataArr[$key];
+                    }
+                }
+            }
+        }
+        return $tree;
     }
 
 }

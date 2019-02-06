@@ -181,7 +181,7 @@ class Product extends \backend\models\BaseModel
             'defaultPageSize' => $pageSize,
             'totalCount' => $totalCount,
         ]);
-        $lists = $model->select(['g.id', 'g.type', 'category_id', 'product_name', 'price', 'sales_price', 'user_id', 'status', 'g.created_at', 'g.updated_at', 'mobile', 'username', 'category_name'])->orderBy($order)
+        $lists = $model->select(['g.id', 'g.type', 'category_id', 'product_name', 'price', 'sales_price', 'user_id', 'status', 'g.created_at', 'g.updated_at','set_chapter_number','sales_price','sales_number', 'mobile', 'username', 'category_name'])->orderBy($order)
             ->offset($pagination->offset)
             ->limit($pagination->limit)
             ->asArray()

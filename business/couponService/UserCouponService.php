@@ -12,6 +12,7 @@ use backend\models\Ad;
 use backend\models\Coupon;
 use backend\models\UserCoupon;
 use business\interfaceService\admin\IBannerService;
+use common\helpers\ConstantHelper;
 use common\helpers\Param;
 use common\helpers\BackendErrorCode;
 use common\helpers\ErrorCode;
@@ -28,16 +29,67 @@ class UserCouponService implements IBannerService
     }
 
     /**
-     * 获取列表
+     * 是否冻结
+     * @return array|bool|null
+     * @author von
+     */
+    public function checkLock()
+    {
+        $id = Yii::$app->request->get('id');
+        try {
+            $res = $this->model->findOneById($id);
+            if ($res) {
+                if ($res->is_lock===ConstantHelper::IS_LOCK_TRUE){
+                    return false;
+                }
+                if ($res->is_lock===ConstantHelper::IS_LOCK_TRUE){
+                    return true;
+                }
+            }
+        } catch (\Exception $e) {
+            Yii::warning($e->getMessage());
+            return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
+        }
+        return true;
+    }
+
+    public function getList()
+    {
+        // TODO: Implement getList() method.
+    }
+
+    /**
+     * 获取用户优惠券详情
      * @param $params
      * @return mixed
      */
-    public function getList()
+    public function getView($id)
     {
         $get = Yii::$app->request->get();
         try {
-            $get = Param::setNull(['username', 'coupon_name','is_lock','is_consume'], $get);
+            $get = Param::setNull(['username', 'coupon_name', 'is_lock', 'is_consume', 'user_id'], $get);
+            $get['user_id'] = empty($get['user_id']) ? $id : null;
             $res = $this->model->getList($get);
+            return WeHelper::jsonReturn($res, BackendErrorCode::ERR_SUCCESS);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+            return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
+        }
+        return $res;
+    }
+
+
+    /**
+     * 获取用户汇总列表
+     * @param $params
+     * @return mixed
+     */
+    public function getUserList()
+    {
+        $get = Yii::$app->request->get();
+        try {
+            $get = Param::setNull(['username', 'coupon_name', 'user_id', 'is_lock', 'is_consume'], $get);
+            $res = $this->model->getUserList($get);
             return WeHelper::jsonReturn($res, BackendErrorCode::ERR_SUCCESS);
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -123,9 +175,8 @@ class UserCouponService implements IBannerService
     }
 
     /**
-     * 删除数据
-     * @param $params
-     * @return boolean
+     * @return array|bool|null|string
+     * @author von
      */
     public function delete()
     {

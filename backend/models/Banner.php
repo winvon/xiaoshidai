@@ -16,7 +16,8 @@ use yii\db\ActiveRecord;
  * @property int $source
  * @property string bind_value
  * @property int hot
- * @property int is_lock`
+ * @property int is_lock
+ * @property int image_path
  * @property int display_order
  * @property int is_delete
  * @property int start_time
@@ -41,9 +42,9 @@ class Banner extends BaseModel
     public function rules()
     {
         return [
-            [['ad_id', 'banner_name', 'type', 'bind_value', 'start_time', 'end_time'], 'required'],
+            [['ad_id', 'banner_name', 'type', 'bind_value', 'image_path','start_time', 'end_time'], 'required'],
             [['ad_id', 'type', 'is_delete', 'display_order', 'hot'], 'integer'],
-            [['banner_name'], 'string', 'max' => 50],
+            [['banner_name','image_path'], 'string'],
             ['hot', 'default', 'value' => 0],
             ['display_order', 'default', 'value' => 0],
             [['start_time', 'end_time'], 'gtTimeNow'],
@@ -78,6 +79,7 @@ class Banner extends BaseModel
             'banner_name' => 'Banner Name',
             'type' => 'Type',
             'bind_value' => 'bind_value',
+            'image_path' => 'Image path',
             'is_delete' => 'Is Delete',
             'display_order' => 'Display Order',
             'hot' => 'Click Number',
@@ -126,7 +128,8 @@ class Banner extends BaseModel
             'banner_name' => $this->banner_name,
             'ad_name' => @$this->ad->ad_name,
             'type' => $this->type,
-            'bind_value' => $this->type == ConstantHelper::BANNER_ITEM_TYPE_BY_URL ? $this->bind_value : @$this->goods->goods_name,
+            'image_path' => $this->image_path,
+            'bind_value' => $this->type == ConstantHelper::BANNER_ITEM_TYPE_BY_URL ? $this->bind_value : @$this->goods->product_name,
             'display_order' => $this->display_order,
             'hot' => $this->hot,
             'is_lock' => $this->is_lock,
@@ -146,10 +149,10 @@ class Banner extends BaseModel
     public function createBanner($data)
     {
         $model = new self();
-        $model->attributes=$data;
+        $model->attributes = $data;
         $model->start_time = strtotime($data['start_time']);
         $model->end_time = strtotime($data['end_time']);
-        if ( $model->save()) {
+        if ($model->save()) {
             return true;
         }
         return $model->getErrors();
@@ -183,8 +186,7 @@ class Banner extends BaseModel
             ->where(['is_delete' => ConstantHelper::IS_DELETE_FALSE])
             ->andFilterWhere(['like', 'banner_name', $params['banner_name']])
             ->andFilterWhere(['source' => $params['source']])
-            ->andFilterWhere(['type' => $params['type']])
-            ;
+            ->andFilterWhere(['type' => $params['type']]);
     }
 
     /**
@@ -239,7 +241,7 @@ class Banner extends BaseModel
     public function del()
     {
         $this->scenario = 'delete';
-        $this->is_delete =ConstantHelper::IS_DELETE_TRUE;
+        $this->is_delete = ConstantHelper::IS_DELETE_TRUE;
         if ($this->save()) {
             return true;
         }
@@ -282,4 +284,6 @@ class Banner extends BaseModel
     {
         return $this->hasOne(Product::className(), ['id' => 'bind_value']);
     }
+
+
 }

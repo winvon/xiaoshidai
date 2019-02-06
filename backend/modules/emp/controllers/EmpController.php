@@ -52,10 +52,10 @@ class EmpController extends RController
      * 获取单个数据详情
      * @return mixed
      */
-    public function actionView()
+    public function actionView($id)
     {
         $service = $this->getService('Emp.Emp');
-        return $service->view();
+        return $service->view($id);
     }
 
     /**

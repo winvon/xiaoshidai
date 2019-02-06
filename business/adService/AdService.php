@@ -15,6 +15,7 @@ use common\helpers\BackendErrorCode;
 use common\helpers\ErrorCode;
 use common\helpers\WeHelper;
 use Yii;
+
 class AdService implements IBannerService
 {
     private $model;
@@ -33,11 +34,11 @@ class AdService implements IBannerService
     {
         $get = Yii::$app->request->get();
         try {
-            $get = Param::setNull(['ad_name', 'source','type','size'], $get);
+            $get = Param::setNull(['ad_name', 'source', 'type', 'size'], $get);
             $res = $this->model->getList($get);
             return WeHelper::jsonReturn($res, BackendErrorCode::ERR_SUCCESS);
         } catch (\Exception $e) {
-            Yii::warning( $e->getMessage());
+            Yii::warning($e->getMessage());
             return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
         }
         return $res;
@@ -45,12 +46,12 @@ class AdService implements IBannerService
 
     /**
      * 新增广告渠道
-     * @param $params
-     * @return boolean
+     * @return array|bool|null
+     * @author von
      */
     public function create()
     {
-        $post =Param::getParam();
+        $post = Param::getParam();
         try {
             $res = $this->model->createAd($post);
             if ($res === true) {
@@ -59,8 +60,7 @@ class AdService implements IBannerService
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_MODEL_VALIDATE);
             }
         } catch (\Exception $e) {
-            Yii::warning($e->getMessage());
-            return WeHelper::jsonReturn( null, BackendErrorCode::ERR_DB);
+            return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
         }
         return true;
 
@@ -73,7 +73,7 @@ class AdService implements IBannerService
      */
     public function update()
     {
-        $post =Param::getParam();
+        $post = Param::getParam();
         $get = Yii::$app->request->get();
         try {
             $res = $this->model->findOneById($get['id']);
@@ -81,7 +81,7 @@ class AdService implements IBannerService
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_OBJECT_NON);
             }
             $this->model = $res;
-            $res=$this->model->modifyAd($post);
+            $res = $this->model->modifyAd($post);
             if ($res !== true) {
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_MODEL_VALIDATE);
             }
@@ -96,19 +96,17 @@ class AdService implements IBannerService
 
     /**
      * 数据详情
-     * @param $params
-     * @return boolean
+     * @return array|bool|null
+     * @author von
      */
     public function view()
     {
         $get = Yii::$app->request->get();
         try {
-
             $res = $this->model->findOneById($get['id']);
             if (!$res) {
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_OBJECT_NON);
             }
-
             $this->model = $res;
 
             $res = $this->model->getView();
@@ -134,10 +132,10 @@ class AdService implements IBannerService
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_OBJECT_NON);
             }
             $this->model = $res;
-            $res=$this->model->del();
+            $res = $this->model->del();
             if ($res === true) {
                 return WeHelper::jsonReturn(null, BackendErrorCode::ERR_SUCCESS);
-            } elseif ($res=== false) {
+            } elseif ($res === false) {
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_DELETE);
             } else {
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_MODEL_VALIDATE);
@@ -161,10 +159,10 @@ class AdService implements IBannerService
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_OBJECT_NON);
             }
             $this->model = $res;
-            $res=$this->model->showById();
+            $res = $this->model->showById();
             if ($res === true) {
                 return WeHelper::jsonReturn(null, BackendErrorCode::ERR_SUCCESS);
-            } elseif ($res=== false) {
+            } elseif ($res === false) {
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_DELETE);
             } else {
                 return WeHelper::jsonReturn($res, BackendErrorCode::ERR_MODEL_VALIDATE);
@@ -174,6 +172,23 @@ class AdService implements IBannerService
         }
         return true;
     }
+
+    /**
+     * @return array|null
+     * @author von
+     */
+    public function getAppBanners()
+    {
+        $get = Yii::$app->request->get();
+        try {
+            $get = Param::setNull(['source'], $get);
+            $res = $this->model->getList($get);
+            return WeHelper::jsonReturn($res, BackendErrorCode::ERR_SUCCESS);
+        }catch (\Exception $e) {
+            return WeHelper::jsonReturn(null, BackendErrorCode::ERR_DB);
+        }
+    }
+
 
 
 }

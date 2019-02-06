@@ -67,4 +67,15 @@ class CategoryController extends RController
         return $service->show();
     }
 
+    /**
+     * 设置分类排序
+     * @return mixed
+     * @author von
+     */
+    public function actionSort()
+    {
+        $service = $this->getService('Product.Category');
+        return $service->sort();
+    }
+
 }

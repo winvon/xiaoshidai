@@ -39,6 +39,7 @@ class UsersController extends RController
         $where = [];
         $where['sex'] = $request->get('sex','');//性别
         $where['mobile'] = $request->get('mobile','');//手机号码
+        $where['username'] = $request->get('username','');//姓名
         $reg_start_time = $request->get('reg_start_time');
         $where['reg_start_time'] = $reg_start_time ? strtotime($reg_start_time) : null;
         $reg_end_time = $request->get('reg_end_time');

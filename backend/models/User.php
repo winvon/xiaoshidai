@@ -269,16 +269,22 @@ class User extends \backend\models\BaseModel
             'defaultPageSize' => $pageSize,
             'totalCount' => $totalCount,
         ]);
-        $lists = $model->select(['id', 'nickname', 'username', 'mobile', 'email', 'sex', 'is_lock', 'created_at'])->orderBy($order)
+        $lists = $model->select(['id', 'nickname', 'username', 'mobile','headimgurl' ,'email', 'sex', 'is_lock', 'created_at','last_time','city_id','user_role_id'])->orderBy($order)
             ->offset($pagination->offset)
             ->limit($pagination->limit)
             ->asArray()
             ->all();
+        $lists_data = [];
+        foreach ($lists as $value) {
+            $value['user_role_name'] = '普通会员';
+            $value['city_name'] = '成都';
+            $lists_data[] = $value;
+        }
         $param[ConstantHelper::COUNT] = (int)$pagination->totalCount;
         $param[ConstantHelper::PAGE] = $pagination->page + 1;
         $param[ConstantHelper::PAGE_SIZE] = $pagination->pageSize;
         $param[ConstantHelper::PAGE_COUNT] = $pagination->pageCount;
-        $param[ConstantHelper::LISTS] = $lists;
+        $param[ConstantHelper::LISTS] = $lists_data;
         return self::backListFormat($param);
 
 //        return [
@@ -296,6 +302,7 @@ class User extends \backend\models\BaseModel
         $query = self::find()
             ->where(['is_delete' => self::DELETE_NOT])
             ->andFilterWhere(['like', 'mobile', $where['mobile']])
+            ->andFilterWhere(['like', 'username', $where['username']])
             ->andFilterWhere(['sex' => $where['sex']]);
         if (isset($where['reg_start_time']) && isset($where['reg_end_time'])) {
             $query->andWhere(['between', 'created_at', $where['reg_start_time'], $where['reg_end_time']]);
