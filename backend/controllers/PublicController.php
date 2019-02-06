@@ -107,8 +107,8 @@ class PublicController extends RController
         $redis = Yii::$app->redis;
         $list_name='miaosha';
         $num=500;
-        while ($redis->llen($list_name)>0){
-            echo $redis->lpop($list_name).'秒杀成功用户<br>';
+        for($num;$num>1;$num--){
+            echo $num.'\n';
         }
         die;
     }
